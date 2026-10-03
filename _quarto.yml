@@ -32,7 +32,7 @@ website:
       - section: "Projects"
         contents:
           - href: projects/johor-turnout/johor-turnout.qmd
-            text: "Johor turnout"
+            text: "Johor election"
 
           - href: projects/fuel-child-education/fuel-child-education.qmd
             text: "Fuel child"

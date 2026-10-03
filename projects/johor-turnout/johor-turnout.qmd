@@ -1,12 +1,14 @@
 ---
-title: "How turnout could have changed Johor's 2026 recent state election"
+title: "How turnout could have changed Johor's 2026 state election"
 ---
 
-# Summary
+## Summary
 
-Full code can be found [here]().
+Full code is in the [GitHub repo](https://github.com/mary-emm/mm-portfolio/tree/main/projects/johor-turnout){target="_blank"}.
 
-## Data
+## Aim
+
+### Data
 
 All election data comes from [ElectionData.MY](https://electiondata.my){target="_blank"},
 the public face of the Malaysian Election Corpus (MECo;
@@ -15,7 +17,7 @@ The site dedicates its data to the public domain (CC0). I ran the query on the s
 [Query Builder](https://electiondata.my/query-builder/){target="_blank"}; the SQL for each export is in `queries/` and the exports are
 in `data/raw/`. 
 
-### Step 1: Lorem ipsum
+#### Step 1: Lorem ipsum
 
 Lorem ipsum
 
@@ -41,7 +43,7 @@ ORDER BY
 
 
 
-### Step 2: Do the same 56 seats appear in SE-15 and SE-16?
+#### Step 2: Do the same 56 seats appear in SE-15 and SE-16?
 
 Run in the electiondata.my Query Builder. Zero rows means every seat name matches.
 
