@@ -47,7 +47,29 @@
     "href": "projects/johor-turnout/johor-turnout.html#aim",
     "title": "How turnout could have changed Johor’s 2026 state election",
     "section": "Aim",
-    "text": "Aim\n\nData\nAll election data comes from ElectionData.MY, the public face of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0). I ran the query on the site’s own Query Builder; the SQL for each export is in queries/ and the exports are in data/raw/.\n\nStep 1: Lorem ipsum\nLorem ipsum\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 01_turnout_context.sql\n-- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)\n-- Note: unweighted mean of seat turnouts, not state turnout\nSELECT\n  election, date, COUNT(*) AS n_seats, ROUND(AVG(voter_turnout), 1) AS avg_turnout\nFROM\n  headline_stats\nWHERE\n  state = 'Johor'\n  AND election IN ('SE-13', 'SE-14', 'SE-15', 'SE-16')\nGROUP BY\n  election, date\nORDER BY\n  date\n\n\n\n\n\nStep 2: Do the same 56 seats appear in SE-15 and SE-16?\nRun in the electiondata.my Query Builder. Zero rows means every seat name matches.\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 02_seat_names.sql\n-- Purpose: list Johor seats present in only one of SE-15 and SE-16.\nSELECT a.seat AS seat_se15, b.seat AS seat_se16\nFROM (SELECT seat FROM headline_stats\n      WHERE state = 'Johor' AND election = 'SE-15') a\nFULL OUTER JOIN (SELECT seat FROM headline_stats\n                 WHERE state = 'Johor' AND election = 'SE-16') b\n  ON a.seat = b.seat\nWHERE a.seat IS NULL OR b.seat IS NULL",
+    "text": "Aim\nWho stays home in Johor, and would the seat results have changed if they had turned out? (Draft: rewrite in your own words.)",
+    "crumbs": [
+      "Projects",
+      "Johor election"
+    ]
+  },
+  {
+    "objectID": "projects/johor-turnout/johor-turnout.html#step-1-data",
+    "href": "projects/johor-turnout/johor-turnout.html#step-1-data",
+    "title": "How turnout could have changed Johor’s 2026 state election",
+    "section": "Step 1: Data",
+    "text": "Step 1: Data\nAll election data comes from ElectionData.MY, the public face of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0). I ran the queries on the site’s own Query Builder; the SQL for each export is in queries/ and the exports are in data/raw/.\nAverage seat turnout in Johor fell from 87.0% (2013) and 84.4% (2018) to 56.8% (2022), then recovered to 70.4% (2026). This is an unweighted mean of seat turnouts, not state turnout.\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 01_turnout_context.sql\n-- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)\n-- Note: unweighted mean of seat turnouts, not state turnout\nSELECT\n  election, date, COUNT(*) AS n_seats, ROUND(AVG(voter_turnout), 1) AS avg_turnout\nFROM\n  headline_stats\nWHERE\n  state = 'Johor'\n  AND election IN ('SE-13', 'SE-14', 'SE-15', 'SE-16')\nGROUP BY\n  election, date\nORDER BY\n  date",
+    "crumbs": [
+      "Projects",
+      "Johor election"
+    ]
+  },
+  {
+    "objectID": "projects/johor-turnout/johor-turnout.html#step-2-check-the-data",
+    "href": "projects/johor-turnout/johor-turnout.html#step-2-check-the-data",
+    "title": "How turnout could have changed Johor’s 2026 state election",
+    "section": "Step 2: Check the data",
+    "text": "Step 2: Check the data\nDo the same 56 seats appear in SE-15 and SE-16? Zero rows means every seat name matches.\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 02_seat_names.sql\n-- Purpose: list Johor seats present in only one of SE-15 and SE-16.\nSELECT a.seat AS seat_se15, b.seat AS seat_se16\nFROM (SELECT seat FROM headline_stats\n      WHERE state = 'Johor' AND election = 'SE-15') a\nFULL OUTER JOIN (SELECT seat FROM headline_stats\n                 WHERE state = 'Johor' AND election = 'SE-16') b\n  ON a.seat = b.seat\nWHERE a.seat IS NULL OR b.seat IS NULL\n\n\n\nResult: 0 rows, so all 56 seat names match. This matches on name only, which doesn’t prove the boundaries are identical.",
     "crumbs": [
       "Projects",
       "Johor election"

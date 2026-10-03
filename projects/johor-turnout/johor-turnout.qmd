@@ -8,20 +8,20 @@ Full code is in the [GitHub repo](https://github.com/mary-emm/mm-portfolio/tree/
 
 ## Aim
 
-### Data
+Who stays home in Johor, and would the seat results have changed if they had turned out? (Draft: rewrite in your own words.)
+
+## Step 1: Data
 
 All election data comes from [ElectionData.MY](https://electiondata.my){target="_blank"},
 the public face of the Malaysian Election Corpus (MECo;
 [Scientific Data, 2025](https://www.nature.com/articles/s41597-025-06502-7){target="_blank"}).
-The site dedicates its data to the public domain (CC0). I ran the query on the site's own
+The site dedicates its data to the public domain (CC0). I ran the queries on the site's own
 [Query Builder](https://electiondata.my/query-builder/){target="_blank"}; the SQL for each export is in `queries/` and the exports are
-in `data/raw/`. 
+in `data/raw/`.
 
-#### Step 1: Lorem ipsum
+Average seat turnout in Johor fell from 87.0% (2013) and 84.4% (2018) to 56.8% (2022), then recovered to 70.4% (2026). This is an unweighted mean of seat turnouts, not state turnout.
 
-Lorem ipsum
-
-::: {.callout-note collapse="false" appearance="minimal" title="Show query"}
+::: {.callout-note collapse="true" appearance="minimal" title="Show query"}
 ```sql
 -- 01_turnout_context.sql
 -- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)
@@ -40,12 +40,9 @@ ORDER BY
 ```
 :::
 
+## Step 2: Check the data
 
-
-
-#### Step 2: Do the same 56 seats appear in SE-15 and SE-16?
-
-Run in the electiondata.my Query Builder. Zero rows means every seat name matches.
+Do the same 56 seats appear in SE-15 and SE-16? Zero rows means every seat name matches.
 
 ::: {.callout-note collapse="true" appearance="minimal" title="Show query"}
 ```sql
@@ -60,3 +57,5 @@ FULL OUTER JOIN (SELECT seat FROM headline_stats
 WHERE a.seat IS NULL OR b.seat IS NULL
 ```
 :::
+
+**Result:** 0 rows, so all 56 seat names match. This matches on name only, which doesn't prove the boundaries are identical.
