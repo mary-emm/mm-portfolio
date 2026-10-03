@@ -1,5 +1,60 @@
 ---
-title: "Who stays home in Johor?"
+title: "How turnout could have changed Johor's 2026 recent state election"
 ---
 
-Work in progress.
+# Summary
+
+Full code can be found [here]().
+
+## Data
+
+All election data comes from [ElectionData.MY](https://electiondata.my){target="_blank"},
+the public face of the Malaysian Election Corpus (MECo;
+[Scientific Data, 2025](https://www.nature.com/articles/s41597-025-06502-7){target="_blank"}).
+The site dedicates its data to the public domain (CC0). I ran the query on the site's own
+[Query Builder](https://electiondata.my/query-builder/){target="_blank"}; the SQL for each export is in `queries/` and the exports are
+in `data/raw/`. 
+
+### Step 1: Lorem ipsum
+
+Lorem ipsum
+
+::: {.callout-note collapse="false" appearance="minimal" title="Show query"}
+```sql
+-- 01_turnout_context.sql
+-- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)
+-- Note: unweighted mean of seat turnouts, not state turnout
+SELECT
+  election, date, COUNT(*) AS n_seats, ROUND(AVG(voter_turnout), 1) AS avg_turnout
+FROM
+  headline_stats
+WHERE
+  state = 'Johor'
+  AND election IN ('SE-13', 'SE-14', 'SE-15', 'SE-16')
+GROUP BY
+  election, date
+ORDER BY
+  date
+```
+:::
+
+
+
+
+### Step 2: Do the same 56 seats appear in SE-15 and SE-16?
+
+Run in the electiondata.my Query Builder. Zero rows means every seat name matches.
+
+::: {.callout-note collapse="true" appearance="minimal" title="Show query"}
+```sql
+-- 02_seat_names.sql
+-- Purpose: list Johor seats present in only one of SE-15 and SE-16.
+SELECT a.seat AS seat_se15, b.seat AS seat_se16
+FROM (SELECT seat FROM headline_stats
+      WHERE state = 'Johor' AND election = 'SE-15') a
+FULL OUTER JOIN (SELECT seat FROM headline_stats
+                 WHERE state = 'Johor' AND election = 'SE-16') b
+  ON a.seat = b.seat
+WHERE a.seat IS NULL OR b.seat IS NULL
+```
+:::
