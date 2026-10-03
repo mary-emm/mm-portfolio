@@ -1,0 +1,34 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "I am…",
+    "section": "",
+    "text": "someone who loves..\nMost of my professional work is proprietary. The projects in the sidebar are ones I can share, with code (where applicable).\nBelow is a brief timeline of my education and work experience. Further details can be found in my resume.\n\n\n\n\n  \n    \n      \n      Jan. 2026 - presentData Scientist, INVOKE Solutions\n    \n    \n      \n        Built Bayesian election prediction models (Dirichlet vote share simulation).\n        Developed consumer survey instruments and analysis pipelines.\n        Tools: R, Python, BigQuery.\n      \n    \n  \n\n  \n    \n      \n      Sept. 2025 - Nov. 2025Full-stack AI Development Bootcamp, Gamuda Learning Center\n    \n    Add details here.\n  \n\n  \n    \n      \n      Jul. 2023 - Jul. 2025Master of Artificial Intelligence (Coursework), Monash University Malaysia\n    \n    Add details here.\n  \n\n  \n    \n      \n      Sept. 2021 - Oct. 2022Language Support Assistant, Global Engagement Office, University of Newcastle\n    \n    Add details here.\n  \n\n  \n    \n      \n      Feb. 2019 - Nov. 2021Bachelor of Design (Architecture), University of Newcastle, Australia\n    \n    Add details here.\n  \n\n  \n    \n      \n      Jun. 2016 - Jun. 2018International Baccalaureate Diploma (IBDP), MARA Banting College\n    \n    Add details here.\n  \n\n  \n    \n      \n      Feb. 2012 - May. 2016IGCSE O-Levels, Junior MARA Science College\n    \n    Add details here.",
+    "crumbs": [
+      "About"
+    ]
+  },
+  {
+    "objectID": "projects/cyber-quest/cyber-quest.html",
+    "href": "projects/cyber-quest/cyber-quest.html",
+    "title": "CyberQuest: MY Edition",
+    "section": "",
+    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.",
+    "crumbs": [
+      "Projects",
+      "CyberQuest: MY Edition"
+    ]
+  },
+  {
+    "objectID": "projects/johor-turnout/johor-turnout.html",
+    "href": "projects/johor-turnout/johor-turnout.html",
+    "title": "Who stays home in Johor?",
+    "section": "",
+    "text": "Work in progress.",
+    "crumbs": [
+      "Projects",
+      "Johor turnout"
+    ]
+  }
+]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # History files
 .Rhistory
 .Rapp.history
@@ -48,3 +49,19 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+=======
+/.quarto/
+**/*.quarto_ipynb
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# Quarto cache
+/.quarto/
+
+# OS and editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+>>>>>>> 7c93a8a (initial setup to portfolio)

@@ -1,0 +1,53 @@
+#setting up quarto website, and pages to be rendered from docs
+project:
+  type: website 
+  output-dir: docs
+
+execute:
+  freeze: auto
+
+website: 
+  title: "Maryam Mohamed"
+  navbar:
+    background: "#70020f"   # any hex colour
+    foreground: "#ffffff"   # text and icon colour
+
+    logo: images/logo.png      # file path, relative to _quarto.yml
+    logo-alt: "Logo"           # for screen readers
+    logo-href: index.qmd       # where clicking it goes (optional)
+    right:
+      - icon: github
+        href: https://github.com/mary-emm/mm-portfolio
+        aria-label: GitHub
+        target: _blank
+      - icon: envelope
+        href: mailto:maryamalfaiz06@gmail.com
+        aria-label: Email
+    
+  sidebar:
+    style: docked
+    contents: 
+      - href: index.qmd
+        text: About
+      - section: "Projects"
+        contents:
+          - href: projects/johor-turnout/johor-turnout.qmd
+            text: "Johor turnout"
+
+          - href: projects/fuel-child-education/fuel-child-education.qmd
+            text: "Fuel child"
+
+          - href: projects/cyber-quest/cyber-quest.qmd
+            text: "CyberQuest: MY Edition"
+
+          - href: projects/audio-seal/audio-seal.qmd
+            text: "AudioSeal"
+
+          - href: projects/nafas/nafas.qmd
+            text: "NAFAS: Asthma app"
+
+
+format:
+  html:
+    theme: [darkly, custom.scss]
+    css: styles.css

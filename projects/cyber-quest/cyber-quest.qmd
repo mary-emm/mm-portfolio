@@ -1,0 +1,5 @@
+---
+title: "CyberQuest: MY Edition"
+---
+
+Game developed on GDev and can be found [here](https://m4meh.itch.io/caknak-cyberquest){target="_blank"}. Game and charts fully designed by me, while all art assets are all credited in Main Menu.
