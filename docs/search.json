@@ -14,65 +14,114 @@
     "href": "projects/cyber-quest/cyber-quest.html",
     "title": "CyberQuest: MY Edition",
     "section": "",
-    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.",
+    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
     "crumbs": [
       "Projects",
       "CyberQuest: MY Edition"
     ]
   },
   {
+    "objectID": "projects/cyber-quest/cyber-quest.html#background",
+    "href": "projects/cyber-quest/cyber-quest.html#background",
+    "title": "CyberQuest: MY Edition",
+    "section": "",
+    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
+    "crumbs": [
+      "Projects",
+      "CyberQuest: MY Edition"
+    ]
+  },
+  {
+    "objectID": "projects/cyber-quest/cyber-quest.html#aim",
+    "href": "projects/cyber-quest/cyber-quest.html#aim",
+    "title": "CyberQuest: MY Edition",
+    "section": "Aim",
+    "text": "Aim\nThe target audience for this games were Malaysian teens, to educate them on cybersecurity in a fun way, hence the gamification of data story-telling. Very much inspired by The Pudding.\nIt covers three common cybersecurity traps most people fall into:\n\nSpam\nFraud\nIntrusion\n\n\nScreenshot of Spam level\n\n\n\n\n\n\n\nScreenshot of Fraud level\n\n\n\n\n\n\n\nScreenshot of Intrusion level\n\n\n\n\n\n\n\nScreenshot of Credit menu\n\n\n\n\nClick any credit to open its source. All assets and data are released under Creative Commons licences.",
+    "crumbs": [
+      "Projects",
+      "CyberQuest: MY Edition"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html",
+    "href": "projects/audio-seal/audio-seal.html",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "",
+    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
+    "crumbs": [
+      "Projects",
+      "AudioSeal"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html#background",
+    "href": "projects/audio-seal/audio-seal.html#background",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "",
+    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
+    "crumbs": [
+      "Projects",
+      "AudioSeal"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html#discussion-limitations",
+    "href": "projects/audio-seal/audio-seal.html#discussion-limitations",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "Discussion & Limitations",
+    "text": "Discussion & Limitations\nAll attacks were tested on a single audio clip from LibriSpeech. Two black-box attacks (random-noise querying and particle swarm optimisation) and one white-box attack (gradient-based PGD) all evaded detection, but only PGD did so while keeping good audio quality (PESQ 3.71, versus about 1.8 to 1.9 for the black-box attacks).\nReversing PGD to forge the watermark worked even better: detection on unwatermarked audio rose from 1% to 100% with almost no audible change (PESQ 4.48). This was possible because AudioSeal’s detector weights are publicly downloadable, which gives an attacker full white-box access, even though the authors’ own paper warns the weights should be kept private.\nThese results come from one clip and assume white-box access for PGD, so they show what is possible, not how robust AudioSeal is in general. Developing strong black-box attacks remains the realistic open problem. Note also that PESQ is only a proxy for quality: the query and PSO attacks left audible background noise, so a human listener would likely notice the tampering, which undermines them as practical attacks.",
+    "crumbs": [
+      "Projects",
+      "AudioSeal"
+    ]
+  },
+  {
     "objectID": "projects/johor-turnout/johor-turnout.html",
     "href": "projects/johor-turnout/johor-turnout.html",
-    "title": "How turnout could have changed Johor’s 2026 state election",
+    "title": "Does household income affect turnout?",
     "section": "",
-    "text": "Full code is in the GitHub repo.",
-    "crumbs": [
-      "Projects",
-      "Johor election"
-    ]
+    "text": "This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn’t realize due to work and time constraints).\nAll election data comes from ElectionData.MY, the public website of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0).\nAll code used can be found in this GitHub repo. A short write up can also be here."
   },
   {
-    "objectID": "projects/johor-turnout/johor-turnout.html#summary",
-    "href": "projects/johor-turnout/johor-turnout.html#summary",
-    "title": "How turnout could have changed Johor’s 2026 state election",
+    "objectID": "projects/johor-turnout/johor-turnout.html#introduction",
+    "href": "projects/johor-turnout/johor-turnout.html#introduction",
+    "title": "Does household income affect turnout?",
     "section": "",
-    "text": "Full code is in the GitHub repo.",
-    "crumbs": [
-      "Projects",
-      "Johor election"
-    ]
+    "text": "This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn’t realize due to work and time constraints).\nAll election data comes from ElectionData.MY, the public website of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0).\nAll code used can be found in this GitHub repo. A short write up can also be here."
   },
   {
-    "objectID": "projects/johor-turnout/johor-turnout.html#aim",
-    "href": "projects/johor-turnout/johor-turnout.html#aim",
-    "title": "How turnout could have changed Johor’s 2026 state election",
-    "section": "Aim",
-    "text": "Aim\nWho stays home in Johor, and would the seat results have changed if they had turned out? (Draft: rewrite in your own words.)",
-    "crumbs": [
-      "Projects",
-      "Johor election"
-    ]
+    "objectID": "projects/johor-turnout/johor-turnout.html#why-do-i-care-about-this-question",
+    "href": "projects/johor-turnout/johor-turnout.html#why-do-i-care-about-this-question",
+    "title": "Does household income affect turnout?",
+    "section": "Why do I care about this question?",
+    "text": "Why do I care about this question?\nWhen I joined INVOKE, I knew very little about how politics worked, and I had the impression that most people my age didn’t care about it. That was humbling. I still however, keep my distance from politics itself, but I don’t think the goal is to immerse yourself in it. It’s to understand it well enough to make decisions that are reasoned, not just emotional. I treat this exploration as factual answers to my questions that I otherwise won’t have known unless I did this."
   },
   {
-    "objectID": "projects/johor-turnout/johor-turnout.html#step-1-data",
-    "href": "projects/johor-turnout/johor-turnout.html#step-1-data",
-    "title": "How turnout could have changed Johor’s 2026 state election",
-    "section": "Step 1: Data",
-    "text": "Step 1: Data\nAll election data comes from ElectionData.MY, the public face of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0). I ran the queries on the site’s own Query Builder; the SQL for each export is in queries/ and the exports are in data/raw/.\nAverage seat turnout in Johor fell from 87.0% (2013) and 84.4% (2018) to 56.8% (2022), then recovered to 70.4% (2026). This is an unweighted mean of seat turnouts, not state turnout.\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 01_turnout_context.sql\n-- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)\n-- Note: unweighted mean of seat turnouts, not state turnout\nSELECT\n  election, date, COUNT(*) AS n_seats, ROUND(AVG(voter_turnout), 1) AS avg_turnout\nFROM\n  headline_stats\nWHERE\n  state = 'Johor'\n  AND election IN ('SE-13', 'SE-14', 'SE-15', 'SE-16')\nGROUP BY\n  election, date\nORDER BY\n  date",
-    "crumbs": [
-      "Projects",
-      "Johor election"
-    ]
+    "objectID": "projects/johor-turnout/johor-turnout.html#load-johors-se-15-and-compute-turnout",
+    "href": "projects/johor-turnout/johor-turnout.html#load-johors-se-15-and-compute-turnout",
+    "title": "Does household income affect turnout?",
+    "section": "Load Johor’s SE-15 and compute turnout",
+    "text": "Load Johor’s SE-15 and compute turnout\n\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n\n\nse_15 &lt;- read_excel(\"data/raw/jhr_se15_dun_turnout.xlsx\") %&gt;%\n  mutate(turnout = ballots_issued / voters_total)\n\n\nglimpse(se_15)\n\nRows: 56\nColumns: 9\n$ election        &lt;chr&gt; \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", …\n$ seat            &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"…\n$ voters_total    &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213…\n$ ballots_issued  &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281…\n$ ethnic_malay    &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967,…\n$ ethnic_chinese  &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 1…\n$ ethnic_indian   &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 3…\n$ votertype_early &lt;dbl&gt; 10, 1125, 0, 0, 7, 41, 65, 26, 32, 215, 15, 12, 0, 964…\n$ turnout         &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867,…\n\nsummary(se_15$turnout)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 0.4328  0.5371  0.5729  0.5682  0.6013  0.6802"
   },
   {
-    "objectID": "projects/johor-turnout/johor-turnout.html#step-2-check-the-data",
-    "href": "projects/johor-turnout/johor-turnout.html#step-2-check-the-data",
-    "title": "How turnout could have changed Johor’s 2026 state election",
-    "section": "Step 2: Check the data",
-    "text": "Step 2: Check the data\nDo the same 56 seats appear in SE-15 and SE-16? Zero rows means every seat name matches.\n\n\n\n\n\n\nNoteShow query\n\n\n\n\n\n-- 02_seat_names.sql\n-- Purpose: list Johor seats present in only one of SE-15 and SE-16.\nSELECT a.seat AS seat_se15, b.seat AS seat_se16\nFROM (SELECT seat FROM headline_stats\n      WHERE state = 'Johor' AND election = 'SE-15') a\nFULL OUTER JOIN (SELECT seat FROM headline_stats\n                 WHERE state = 'Johor' AND election = 'SE-16') b\n  ON a.seat = b.seat\nWHERE a.seat IS NULL OR b.seat IS NULL\n\n\n\nResult: 0 rows, so all 56 seat names match. This matches on name only, which doesn’t prove the boundaries are identical.",
-    "crumbs": [
-      "Projects",
-      "Johor election"
-    ]
+    "objectID": "projects/johor-turnout/johor-turnout.html#load-the-income-income-inequality-data",
+    "href": "projects/johor-turnout/johor-turnout.html#load-the-income-income-inequality-data",
+    "title": "Does household income affect turnout?",
+    "section": "Load the income & income inequality data",
+    "text": "Load the income & income inequality data\nSince both files covers between 2019-2024, I’ll filter out only Johor & 2022.\n\nincome_raw &lt;- read.csv(\"data/raw/hh_income_dun.csv\")\n\nglimpse(income_raw)\n\nRows: 1,800\nColumns: 6\n$ date          &lt;chr&gt; \"2019-01-01\", \"2022-01-01\", \"2024-01-01\", \"2019-01-01\", …\n$ state         &lt;chr&gt; \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perli…\n$ parlimen      &lt;chr&gt; \"P.001 Padang Besar\", \"P.001 Padang Besar\", \"P.001 Padan…\n$ dun           &lt;chr&gt; \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"N.01 Titi Tingg…\n$ income_median &lt;dbl&gt; 4417, 4206, 4983, 4066, 4548, 6232, 4016, 4324, 4725, 46…\n$ income_mean   &lt;dbl&gt; 4662, 4673, 5404, 4696, 5347, 5818, 4681, 4823, 5269, 53…\n\nincome_raw %&gt;% distinct(date)\n\n        date\n1 2019-01-01\n2 2022-01-01\n3 2024-01-01\n\n# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022\nincome &lt;- income_raw %&gt;% filter(state == \"Johor\", substr(date,1,4) == \"2022\")\n\nglimpse(income)\n\nRows: 56\nColumns: 6\n$ date          &lt;chr&gt; \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", …\n$ state         &lt;chr&gt; \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"J…\n$ parlimen      &lt;chr&gt; \"P.140 Segamat\", \"P.140 Segamat\", \"P.141 Sekijang\", \"P.1…\n$ dun           &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N.…\n$ income_median &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 56…\n$ income_mean   &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 72…\n\n\n\nineq_raw &lt;- read.csv(\"data/raw/hh_inequality_dun.csv\")\n\nglimpse(ineq_raw)\n\nRows: 1,800\nColumns: 5\n$ date     &lt;chr&gt; \"2019-01-01\", \"2022-01-01\", \"2024-01-01\", \"2019-01-01\", \"2022…\n$ state    &lt;chr&gt; \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"…\n$ parlimen &lt;chr&gt; \"P.001 Padang Besar\", \"P.001 Padang Besar\", \"P.001 Padang Bes…\n$ dun      &lt;chr&gt; \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"…\n$ gini     &lt;dbl&gt; 0.305, 0.285, 0.286, 0.325, 0.306, 0.239, 0.292, 0.288, 0.292…\n\nineq_raw %&gt;% distinct(date)\n\n        date\n1 2019-01-01\n2 2022-01-01\n3 2024-01-01\n\n# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022\nineq &lt;- ineq_raw %&gt;% filter(state == \"Johor\", substr(date,1,4) == \"2022\")\n\nglimpse(ineq)\n\nRows: 56\nColumns: 5\n$ date     &lt;chr&gt; \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022…\n$ state    &lt;chr&gt; \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\"…\n$ parlimen &lt;chr&gt; \"P.140 Segamat\", \"P.140 Segamat\", \"P.141 Sekijang\", \"P.141 Se…\n$ dun      &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N.04 Ke…\n$ gini     &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339, 0.383…"
+  },
+  {
+    "objectID": "projects/johor-turnout/johor-turnout.html#checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata",
+    "href": "projects/johor-turnout/johor-turnout.html#checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata",
+    "title": "Does household income affect turnout?",
+    "section": "Checking if the DUN name in the household income matches the one from ElectionData",
+    "text": "Checking if the DUN name in the household income matches the one from ElectionData\n\nsetdiff(se_15$seat, income$dun)\n\ncharacter(0)\n\nsetdiff(se_15$seat, ineq$dun)\n\ncharacter(0)\n\n\nMatches so it makes things easier."
+  },
+  {
+    "objectID": "projects/johor-turnout/johor-turnout.html#joining-the-election-data-with-the-income-inequality-data.",
+    "href": "projects/johor-turnout/johor-turnout.html#joining-the-election-data-with-the-income-inequality-data.",
+    "title": "Does household income affect turnout?",
+    "section": "Joining the election data with the income + inequality data.",
+    "text": "Joining the election data with the income + inequality data.\n\njhr &lt;- se_15 %&gt;% left_join(income, by = c(\"seat\" = \"dun\")) %&gt;% left_join(ineq, by = c(\"seat\" = \"dun\")) %&gt;% select(election,seat,voters_total, ballots_issued,ethnic_malay,ethnic_chinese,ethnic_indian,turnout, income_median,income_mean,gini)\n\nglimpse(jhr)\n\nRows: 56\nColumns: 11\n$ election       &lt;chr&gt; \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"…\n$ seat           &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N…\n$ voters_total   &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213,…\n$ ballots_issued &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281,…\n$ ethnic_malay   &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967, …\n$ ethnic_chinese &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 10…\n$ ethnic_indian  &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 35…\n$ turnout        &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867, …\n$ income_median  &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 5…\n$ income_mean    &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 7…\n$ gini           &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339,…\n\ncolSums(is.na(jhr))\n\n      election           seat   voters_total ballots_issued   ethnic_malay \n             0              0              0              0              0 \nethnic_chinese  ethnic_indian        turnout  income_median    income_mean \n             0              0              0              0              0 \n          gini \n             0 \n\n\n\nggplot(jhr, aes(x=income_median,y= turnout)) + geom_point() + geom_smooth(method= \"lm\") + labs(\n  title = \"Median income vs Turnout (Johor SE-15)\",\n    x = \"Median income\",\n    y = \"Avg. Turnout\"\n)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(jhr, aes(x=gini,y= turnout)) + geom_point() + geom_smooth(method= \"lm\") + labs(\n  title = \"Income inequality (Gini) vs Turnout (Johor SE-15)\",\n    x = \"Income inequality\",\n    y = \"Avg. Turnout\"\n)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\ncor(jhr$turnout,jhr$gini)\n\n[1] -0.2263208\n\ncor(jhr$turnout, jhr$income_median)\n\n[1] -0.4774117\n\n\nMedian income has clearer negative correlation,\n\nm1 &lt;- lm(turnout ~ I(income_median / 1000), data = jhr)\n\nsummary(m1)\n\n\nCall:\nlm(formula = turnout ~ I(income_median/1000), data = jhr)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.095183 -0.030510 -0.003808  0.027750  0.126999 \n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)            0.686592   0.030317  22.647  &lt; 2e-16 ***\nI(income_median/1000) -0.019170   0.004801  -3.993 0.000199 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.0469 on 54 degrees of freedom\nMultiple R-squared:  0.2279,    Adjusted R-squared:  0.2136 \nF-statistic: 15.94 on 1 and 54 DF,  p-value: 0.0001988"
   }
 ]

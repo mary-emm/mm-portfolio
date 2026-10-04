@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>audio-seal – Maryam Mohamed</title>
+<title>Exploratory attack on AudioSeal – Maryam Mohamed</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/audio-seal/audio-seal.html">AudioSeal</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/audio-seal/audio-seal.html">AudioSeal</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -149,8 +149,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/johor-turnout/johor-turnout.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Johor election</span></a>
+  <a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(Demo) Johor election - Bayes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -167,14 +167,14 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/audio-seal/audio-seal.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">AudioSeal</span></a>
+  <a href="../../projects/nafas/nafas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NAFAS: Asthma app</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/nafas/nafas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NAFAS: Asthma app</span></a>
+  <a href="../../projects/audio-seal/audio-seal.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">AudioSeal</span></a>
   </div>
 </li>
       </ul>
@@ -186,13 +186,60 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/audio-seal/audio-seal.html">AudioSeal</a></li></ol></nav></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/audio-seal/audio-seal.html">AudioSeal</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Exploratory attack on AudioSeal</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">University</div>
+    <div class="quarto-category">2024</div>
+  </div>
+  </div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
 
 
+</header>
 
+
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>This was done as part of my <a href="https://handbook.monash.edu/2026/units/FIT5230" target="_blank">Malicious AI</a> unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: <a href="https://github.com/facebookresearch/audioseal" target="_blank">Meta’s AudioSeal</a>, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.</p>
+<p><strong>Colab Notebook Link</strong>:</p>
+<ul>
+<li><p><a href="https://colab.research.google.com/drive/1EANT7beE-bFD1wf-PkPdoY_hwJv9Rn-C?usp=sharing" target="_blank">Part 1</a></p></li>
+<li><p><a href="https://colab.research.google.com/drive/1d37qD4tOUlBQm-ljGnJ1SR_W9sySi698?usp=sharing" target="_blank">Part 2</a></p></li>
+<li><p><a href="https://drive.google.com/file/d/1maU-v6ogcqVm44KTq76UqZnToVrqsKzL/view?usp=sharing" target="_blank">Full video walk-through</a></p></li>
+</ul>
+<p>Alternatively, please refer to the PDF below for the static version of the assignment.</p>
+<section id="part-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
+<iframe src="audioseal-notebook-p1.pdf" width="100%" height="800" style="border:0;"></iframe>
+<p><a href="audioseal-notebook-p1.pdf" target="_blank">Open the Part 1 in a new tab</a></p>
+</section>
+<section id="part-2" class="level3">
+<h3 class="anchored" data-anchor-id="part-2">Part 2</h3>
+<iframe src="audioseal-notebook-p2.pdf" width="100%" height="800" style="border:0;"></iframe>
+<p><a href="audioseal-notebook-p2.pdf" target="_blank">Open the Part 2 in a new tab</a></p>
+</section>
+</section>
+<section id="discussion-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="discussion-limitations">Discussion &amp; Limitations</h2>
+<p>All attacks were tested on a single audio clip from LibriSpeech. Two black-box attacks (random-noise querying and particle swarm optimisation) and one white-box attack (gradient-based PGD) all evaded detection, but only PGD did so while keeping good audio quality (PESQ 3.71, versus about 1.8 to 1.9 for the black-box attacks).</p>
+<p>Reversing PGD to forge the watermark worked even better: detection on unwatermarked audio rose from 1% to 100% with almost no audible change (PESQ 4.48). This was possible because AudioSeal’s detector weights are publicly downloadable, which gives an attacker full white-box access, even though the authors’ own paper warns the weights should be kept private.</p>
+<p>These results come from one clip and assume white-box access for PGD, so they show what is possible, not how robust AudioSeal is in general. Developing strong black-box attacks remains the realistic open problem. Note also that PESQ is only a proxy for quality: the query and PSO attacks left audible background noise, so a human listener would likely notice the tampering, which undermines them as practical attacks.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>How turnout could have changed Johor’s 2026 state election – Maryam Mohamed</title>
+<title>Does household income affect turnout? – Maryam Mohamed</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Johor election</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Does household income affect turnout?</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -184,8 +184,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/johor-turnout/johor-turnout.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Johor election</span></a>
+  <a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">(Demo) Johor election - Bayes</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -202,14 +202,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/audio-seal/audio-seal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AudioSeal</span></a>
+  <a href="../../projects/nafas/nafas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NAFAS: Asthma app</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../projects/nafas/nafas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NAFAS: Asthma app</span></a>
+  <a href="../../projects/audio-seal/audio-seal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">AudioSeal</span></a>
   </div>
 </li>
       </ul>
@@ -223,9 +223,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/johor-turnout/johor-turnout.html">Johor election</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How turnout could have changed Johor’s 2026 state election</h1>
+<h1 class="title">Does household income affect turnout?</h1>
 </div>
 
 
@@ -242,76 +242,237 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="summary" class="level2">
-<h2 class="anchored" data-anchor-id="summary">Summary</h2>
-<p>Full code is in the <a href="https://github.com/mary-emm/mm-portfolio/tree/main/projects/johor-turnout" target="_blank">GitHub repo</a>.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn’t realize due to work and time constraints).</p>
+<p>All election data comes from <a href="https://electiondata.my" target="_blank">ElectionData.MY</a>, the public website of the Malaysian Election Corpus (MECo; <a href="https://www.nature.com/articles/s41597-025-06502-7" target="_blank">Scientific Data, 2025</a>). The site dedicates its data to the public domain (CC0).</p>
+<p>All code used can be found in this <a href="https://github.com/mary-emm/mm-portfolio/tree/main/projects/johor-turnout" target="_blank">GitHub repo</a>. A short write up can also be <a href="#" target="_blank">here</a>.</p>
 </section>
-<section id="aim" class="level2">
-<h2 class="anchored" data-anchor-id="aim">Aim</h2>
-<p>Who stays home in Johor, and would the seat results have changed if they had turned out? (Draft: rewrite in your own words.)</p>
+<section id="why-do-i-care-about-this-question" class="level2">
+<h2 class="anchored" data-anchor-id="why-do-i-care-about-this-question">Why do I care about this question?</h2>
+<p>When I joined INVOKE, I knew very little about how politics worked, and I had the impression that most people my age didn’t care about it. That was humbling. I still however, <strong>keep my distance from politics itself</strong>, but I don’t think the goal is to immerse yourself in it. It’s to understand it well enough to make decisions that are reasoned, not just emotional. I treat this exploration as factual answers to my questions that I otherwise won’t have known unless I did this.</p>
 </section>
-<section id="step-1-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-data">Step 1: Data</h2>
-<p>All election data comes from <a href="https://electiondata.my" target="_blank">ElectionData.MY</a>, the public face of the Malaysian Election Corpus (MECo; <a href="https://www.nature.com/articles/s41597-025-06502-7" target="_blank">Scientific Data, 2025</a>). The site dedicates its data to the public domain (CC0). I ran the queries on the site’s own <a href="https://electiondata.my/query-builder/" target="_blank">Query Builder</a>; the SQL for each export is in <code>queries/</code> and the exports are in <code>data/raw/</code>.</p>
-<p>Average seat turnout in Johor fell from 87.0% (2013) and 84.4% (2018) to 56.8% (2022), then recovered to 70.4% (2026). This is an unweighted mean of seat turnouts, not state turnout.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Show query">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="load-johors-se-15-and-compute-turnout" class="level2">
+<h2 class="anchored" data-anchor-id="load-johors-se-15-and-compute-turnout">Load Johor’s SE-15 and compute turnout</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>se_15 <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/raw/jhr_se15_dun_turnout.xlsx"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">turnout =</span> ballots_issued <span class="sc">/</span> voters_total)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(se_15)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 56
+Columns: 9
+$ election        &lt;chr&gt; "SE-15", "SE-15", "SE-15", "SE-15", "SE-15", "SE-15", …
+$ seat            &lt;chr&gt; "N.01 Buloh Kasap", "N.02 Jementah", "N.03 Pemanis", "…
+$ voters_total    &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213…
+$ ballots_issued  &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281…
+$ ethnic_malay    &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967,…
+$ ethnic_chinese  &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 1…
+$ ethnic_indian   &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 3…
+$ votertype_early &lt;dbl&gt; 10, 1125, 0, 0, 7, 41, 65, 26, 32, 215, 15, 12, 0, 964…
+$ turnout         &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867,…</code></pre>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Show query
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- 01_turnout_context.sql</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">-- Note: unweighted mean of seat turnouts, not state turnout</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  election, <span class="dt">date</span>, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n_seats, <span class="fu">ROUND</span>(<span class="fu">AVG</span>(voter_turnout), <span class="dv">1</span>) <span class="kw">AS</span> avg_turnout</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  headline_stats</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  state <span class="op">=</span> <span class="st">'Johor'</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="kw">AND</span> election <span class="kw">IN</span> (<span class="st">'SE-13'</span>, <span class="st">'SE-14'</span>, <span class="st">'SE-15'</span>, <span class="st">'SE-16'</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  election, <span class="dt">date</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="dt">date</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(se_15<span class="sc">$</span>turnout)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+ 0.4328  0.5371  0.5729  0.5682  0.6013  0.6802 </code></pre>
 </div>
 </div>
 </section>
-<section id="step-2-check-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-check-the-data">Step 2: Check the data</h2>
-<p>Do the same 56 seats appear in SE-15 and SE-16? Zero rows means every seat name matches.</p>
-<div class="callout callout-style-simple callout-note no-icon callout-titled" title="Show query">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
+<section id="load-the-income-income-inequality-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-income-income-inequality-data">Load the income &amp; income inequality data</h2>
+<p>Since both files covers between 2019-2024, I’ll filter out only Johor &amp; 2022.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>income_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/raw/hh_income_dun.csv"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(income_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,800
+Columns: 6
+$ date          &lt;chr&gt; "2019-01-01", "2022-01-01", "2024-01-01", "2019-01-01", …
+$ state         &lt;chr&gt; "Perlis", "Perlis", "Perlis", "Perlis", "Perlis", "Perli…
+$ parlimen      &lt;chr&gt; "P.001 Padang Besar", "P.001 Padang Besar", "P.001 Padan…
+$ dun           &lt;chr&gt; "N.01 Titi Tinggi", "N.01 Titi Tinggi", "N.01 Titi Tingg…
+$ income_median &lt;dbl&gt; 4417, 4206, 4983, 4066, 4548, 6232, 4016, 4324, 4725, 46…
+$ income_mean   &lt;dbl&gt; 4662, 4673, 5404, 4696, 5347, 5818, 4681, 4823, 5269, 53…</code></pre>
 </div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Show query
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>income_raw <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date
+1 2019-01-01
+2 2022-01-01
+3 2024-01-01</code></pre>
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>income <span class="ot">&lt;-</span> income_raw <span class="sc">%&gt;%</span> <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Johor"</span>, <span class="fu">substr</span>(date,<span class="dv">1</span>,<span class="dv">4</span>) <span class="sc">==</span> <span class="st">"2022"</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(income)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 56
+Columns: 6
+$ date          &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-01", "2022-01-01", …
+$ state         &lt;chr&gt; "Johor", "Johor", "Johor", "Johor", "Johor", "Johor", "J…
+$ parlimen      &lt;chr&gt; "P.140 Segamat", "P.140 Segamat", "P.141 Sekijang", "P.1…
+$ dun           &lt;chr&gt; "N.01 Buloh Kasap", "N.02 Jementah", "N.03 Pemanis", "N.…
+$ income_median &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 56…
+$ income_mean   &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 72…</code></pre>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- 02_seat_names.sql</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">-- Purpose: list Johor seats present in only one of SE-15 and SE-16.</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.seat <span class="kw">AS</span> seat_se15, b.seat <span class="kw">AS</span> seat_se16</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> (<span class="kw">SELECT</span> seat <span class="kw">FROM</span> headline_stats</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>      <span class="kw">WHERE</span> state <span class="op">=</span> <span class="st">'Johor'</span> <span class="kw">AND</span> election <span class="op">=</span> <span class="st">'SE-15'</span>) a</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FULL</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> (<span class="kw">SELECT</span> seat <span class="kw">FROM</span> headline_stats</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                 <span class="kw">WHERE</span> state <span class="op">=</span> <span class="st">'Johor'</span> <span class="kw">AND</span> election <span class="op">=</span> <span class="st">'SE-16'</span>) b</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="kw">ON</span> a.seat <span class="op">=</span> b.seat</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> a.seat <span class="kw">IS</span> <span class="kw">NULL</span> <span class="kw">OR</span> b.seat <span class="kw">IS</span> <span class="kw">NULL</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ineq_raw <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/raw/hh_inequality_dun.csv"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ineq_raw)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 1,800
+Columns: 5
+$ date     &lt;chr&gt; "2019-01-01", "2022-01-01", "2024-01-01", "2019-01-01", "2022…
+$ state    &lt;chr&gt; "Perlis", "Perlis", "Perlis", "Perlis", "Perlis", "Perlis", "…
+$ parlimen &lt;chr&gt; "P.001 Padang Besar", "P.001 Padang Besar", "P.001 Padang Bes…
+$ dun      &lt;chr&gt; "N.01 Titi Tinggi", "N.01 Titi Tinggi", "N.01 Titi Tinggi", "…
+$ gini     &lt;dbl&gt; 0.305, 0.285, 0.286, 0.325, 0.306, 0.239, 0.292, 0.288, 0.292…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ineq_raw <span class="sc">%&gt;%</span> <span class="fu">distinct</span>(date)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>        date
+1 2019-01-01
+2 2022-01-01
+3 2024-01-01</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>ineq <span class="ot">&lt;-</span> ineq_raw <span class="sc">%&gt;%</span> <span class="fu">filter</span>(state <span class="sc">==</span> <span class="st">"Johor"</span>, <span class="fu">substr</span>(date,<span class="dv">1</span>,<span class="dv">4</span>) <span class="sc">==</span> <span class="st">"2022"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ineq)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 56
+Columns: 5
+$ date     &lt;chr&gt; "2022-01-01", "2022-01-01", "2022-01-01", "2022-01-01", "2022…
+$ state    &lt;chr&gt; "Johor", "Johor", "Johor", "Johor", "Johor", "Johor", "Johor"…
+$ parlimen &lt;chr&gt; "P.140 Segamat", "P.140 Segamat", "P.141 Sekijang", "P.141 Se…
+$ dun      &lt;chr&gt; "N.01 Buloh Kasap", "N.02 Jementah", "N.03 Pemanis", "N.04 Ke…
+$ gini     &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339, 0.383…</code></pre>
+</div>
+</div>
+</section>
+<section id="checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata" class="level2">
+<h2 class="anchored" data-anchor-id="checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata">Checking if the DUN name in the household income matches the one from ElectionData</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setdiff</span>(se_15<span class="sc">$</span>seat, income<span class="sc">$</span>dun)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>character(0)</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setdiff</span>(se_15<span class="sc">$</span>seat, ineq<span class="sc">$</span>dun)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>character(0)</code></pre>
+</div>
+</div>
+<p>Matches so it makes things easier.</p>
+</section>
+<section id="joining-the-election-data-with-the-income-inequality-data." class="level2">
+<h2 class="anchored" data-anchor-id="joining-the-election-data-with-the-income-inequality-data.">Joining the election data with the income + inequality data.</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>jhr <span class="ot">&lt;-</span> se_15 <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(income, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"seat"</span> <span class="ot">=</span> <span class="st">"dun"</span>)) <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(ineq, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"seat"</span> <span class="ot">=</span> <span class="st">"dun"</span>)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(election,seat,voters_total, ballots_issued,ethnic_malay,ethnic_chinese,ethnic_indian,turnout, income_median,income_mean,gini)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(jhr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 56
+Columns: 11
+$ election       &lt;chr&gt; "SE-15", "SE-15", "SE-15", "SE-15", "SE-15", "SE-15", "…
+$ seat           &lt;chr&gt; "N.01 Buloh Kasap", "N.02 Jementah", "N.03 Pemanis", "N…
+$ voters_total   &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213,…
+$ ballots_issued &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281,…
+$ ethnic_malay   &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967, …
+$ ethnic_chinese &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 10…
+$ ethnic_indian  &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 35…
+$ turnout        &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867, …
+$ income_median  &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 5…
+$ income_mean    &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 7…
+$ gini           &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339,…</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colSums</span>(<span class="fu">is.na</span>(jhr))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      election           seat   voters_total ballots_issued   ethnic_malay 
+             0              0              0              0              0 
+ethnic_chinese  ethnic_indian        turnout  income_median    income_mean 
+             0              0              0              0              0 
+          gini 
+             0 </code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jhr, <span class="fu">aes</span>(<span class="at">x=</span>income_median,<span class="at">y=</span> turnout)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method=</span> <span class="st">"lm"</span>) <span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Median income vs Turnout (Johor SE-15)"</span>,</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Median income"</span>,</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Avg. Turnout"</span></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="johor-turnout_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
 </div>
 </div>
-<p><strong>Result:</strong> 0 rows, so all 56 seat names match. This matches on name only, which doesn’t prove the boundaries are identical.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(jhr, <span class="fu">aes</span>(<span class="at">x=</span>gini,<span class="at">y=</span> turnout)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> <span class="fu">geom_smooth</span>(<span class="at">method=</span> <span class="st">"lm"</span>) <span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Income inequality (Gini) vs Turnout (Johor SE-15)"</span>,</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Income inequality"</span>,</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Avg. Turnout"</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="johor-turnout_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(jhr<span class="sc">$</span>turnout,jhr<span class="sc">$</span>gini)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.2263208</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(jhr<span class="sc">$</span>turnout, jhr<span class="sc">$</span>income_median)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] -0.4774117</code></pre>
+</div>
+</div>
+<p>Median income has clearer negative correlation,</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>m1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(turnout <span class="sc">~</span> <span class="fu">I</span>(income_median <span class="sc">/</span> <span class="dv">1000</span>), <span class="at">data =</span> jhr)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(m1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = turnout ~ I(income_median/1000), data = jhr)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.095183 -0.030510 -0.003808  0.027750  0.126999 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)            0.686592   0.030317  22.647  &lt; 2e-16 ***
+I(income_median/1000) -0.019170   0.004801  -3.993 0.000199 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.0469 on 54 degrees of freedom
+Multiple R-squared:  0.2279,    Adjusted R-squared:  0.2136 
+F-statistic: 15.94 on 1 and 54 DF,  p-value: 0.0001988</code></pre>
+</div>
+</div>
 
 
 </section>

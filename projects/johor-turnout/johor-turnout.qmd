@@ -1,61 +1,121 @@
 ---
-title: "How turnout could have changed Johor's 2026 state election"
+title: "Does household income affect turnout?"
+
+
 ---
 
-## Summary
+## Introduction
 
-Full code is in the [GitHub repo](https://github.com/mary-emm/mm-portfolio/tree/main/projects/johor-turnout){target="_blank"}.
+This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn't realize due to work and time constraints). 
 
-## Aim
+All election data comes from [ElectionData.MY](https://electiondata.my){target="_blank"}, the public website of the Malaysian Election Corpus (MECo;
+[Scientific Data, 2025](https://www.nature.com/articles/s41597-025-06502-7){target="_blank"}). The site dedicates its data to the public domain (CC0).
 
-Who stays home in Johor, and would the seat results have changed if they had turned out? (Draft: rewrite in your own words.)
+All code used can be found in this [GitHub repo](https://github.com/mary-emm/mm-portfolio/tree/main/projects/johor-turnout){target="_blank"}. A short write up can also be [here](#){target="_blank"}.
 
-## Step 1: Data
+## Why do I care about this question?
 
-All election data comes from [ElectionData.MY](https://electiondata.my){target="_blank"},
-the public face of the Malaysian Election Corpus (MECo;
-[Scientific Data, 2025](https://www.nature.com/articles/s41597-025-06502-7){target="_blank"}).
-The site dedicates its data to the public domain (CC0). I ran the queries on the site's own
-[Query Builder](https://electiondata.my/query-builder/){target="_blank"}; the SQL for each export is in `queries/` and the exports are
-in `data/raw/`.
+When I joined INVOKE, I knew very little about how politics worked, and I had the impression that most people my age didn't care about it. That was humbling. I still however, **keep my distance from politics itself**, but I don't think the goal is to immerse yourself in it. It's to understand it well enough to make decisions that are reasoned, not just emotional. I treat this exploration as factual answers to my questions that I otherwise won't have known unless I did this.
 
-Average seat turnout in Johor fell from 87.0% (2013) and 84.4% (2018) to 56.8% (2022), then recovered to 70.4% (2026). This is an unweighted mean of seat turnouts, not state turnout.
+## Load Johor's SE-15 and compute turnout
+```{r}
+#| message: false
+library(readxl)
+library(dplyr)
+library(ggplot2)
 
-::: {.callout-note collapse="true" appearance="minimal" title="Show query"}
-```sql
--- 01_turnout_context.sql
--- Purpose: average Johor DUN turnout, SE-13 to SE-16 (context plot)
--- Note: unweighted mean of seat turnouts, not state turnout
-SELECT
-  election, date, COUNT(*) AS n_seats, ROUND(AVG(voter_turnout), 1) AS avg_turnout
-FROM
-  headline_stats
-WHERE
-  state = 'Johor'
-  AND election IN ('SE-13', 'SE-14', 'SE-15', 'SE-16')
-GROUP BY
-  election, date
-ORDER BY
-  date
+
+
+se_15 <- read_excel("data/raw/jhr_se15_dun_turnout.xlsx") %>%
+  mutate(turnout = ballots_issued / voters_total)
+
+
+glimpse(se_15)
+summary(se_15$turnout)
 ```
-:::
 
-## Step 2: Check the data
 
-Do the same 56 seats appear in SE-15 and SE-16? Zero rows means every seat name matches.
+## Load the income & income inequality data
 
-::: {.callout-note collapse="true" appearance="minimal" title="Show query"}
-```sql
--- 02_seat_names.sql
--- Purpose: list Johor seats present in only one of SE-15 and SE-16.
-SELECT a.seat AS seat_se15, b.seat AS seat_se16
-FROM (SELECT seat FROM headline_stats
-      WHERE state = 'Johor' AND election = 'SE-15') a
-FULL OUTER JOIN (SELECT seat FROM headline_stats
-                 WHERE state = 'Johor' AND election = 'SE-16') b
-  ON a.seat = b.seat
-WHERE a.seat IS NULL OR b.seat IS NULL
+Since both files covers between 2019-2024, I'll filter out only Johor & 2022.
+```{r}
+income_raw <- read.csv("data/raw/hh_income_dun.csv")
+
+glimpse(income_raw)
+income_raw %>% distinct(date)
+
+
+# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022
+income <- income_raw %>% filter(state == "Johor", substr(date,1,4) == "2022")
+
+glimpse(income)
+
 ```
-:::
 
-**Result:** 0 rows, so all 56 seat names match. This matches on name only, which doesn't prove the boundaries are identical.
+```{r}
+ineq_raw <- read.csv("data/raw/hh_inequality_dun.csv")
+
+glimpse(ineq_raw)
+ineq_raw %>% distinct(date)
+
+
+# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022
+ineq <- ineq_raw %>% filter(state == "Johor", substr(date,1,4) == "2022")
+
+glimpse(ineq)
+
+```
+
+## Checking if the DUN name in the household income matches the one from ElectionData
+
+```{r}
+setdiff(se_15$seat, income$dun)
+setdiff(se_15$seat, ineq$dun)
+```
+
+Matches so it makes things easier.
+
+## Joining the election data with the income + inequality data.
+```{r}
+
+jhr <- se_15 %>% left_join(income, by = c("seat" = "dun")) %>% left_join(ineq, by = c("seat" = "dun")) %>% select(election,seat,voters_total, ballots_issued,ethnic_malay,ethnic_chinese,ethnic_indian,turnout, income_median,income_mean,gini)
+
+glimpse(jhr)
+
+colSums(is.na(jhr))
+```
+
+
+```{r}
+
+ggplot(jhr, aes(x=income_median,y= turnout)) + geom_point() + geom_smooth(method= "lm") + labs(
+  title = "Median income vs Turnout (Johor SE-15)",
+    x = "Median income",
+    y = "Avg. Turnout"
+)
+```
+
+
+```{r}
+
+ggplot(jhr, aes(x=gini,y= turnout)) + geom_point() + geom_smooth(method= "lm") + labs(
+  title = "Income inequality (Gini) vs Turnout (Johor SE-15)",
+    x = "Income inequality",
+    y = "Avg. Turnout"
+)
+
+
+cor(jhr$turnout,jhr$gini)
+cor(jhr$turnout, jhr$income_median)
+```
+
+Median income has clearer negative correlation, 
+
+```{r}
+
+m1 <- lm(turnout ~ I(income_median / 1000), data = jhr)
+
+summary(m1)
+```
+
+

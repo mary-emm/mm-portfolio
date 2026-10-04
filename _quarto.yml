@@ -2,6 +2,8 @@
 project:
   type: website 
   output-dir: docs
+  resources:
+    - projects/audio-seal/*.pdf
 
 execute:
   freeze: auto
@@ -31,8 +33,11 @@ website:
         text: About
       - section: "Projects"
         contents:
-          - href: projects/johor-turnout/johor-turnout.qmd
-            text: "Johor election"
+          - href: projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.qmd
+            text: "(Demo) Johor election - Bayes"
+
+          # - href: projects/johor-turnout/johor-turnout.qmd
+          #   text: "Johor election"
 
           - href: projects/fuel-child-education/fuel-child-education.qmd
             text: "Fuel child"
@@ -40,11 +45,11 @@ website:
           - href: projects/cyber-quest/cyber-quest.qmd
             text: "CyberQuest: MY Edition"
 
-          - href: projects/audio-seal/audio-seal.qmd
-            text: "AudioSeal"
-
           - href: projects/nafas/nafas.qmd
             text: "NAFAS: Asthma app"
+
+          - href: projects/audio-seal/audio-seal.qmd
+            text: "AudioSeal"
 
 
 format:

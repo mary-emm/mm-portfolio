@@ -1,0 +1,44 @@
+---
+title: "Exploratory attack on AudioSeal"
+categories: [University, 2024]
+
+---
+
+## Background
+
+This was done as part of my [Malicious AI](https://handbook.monash.edu/2026/units/FIT5230){target="_blank"} unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: [Meta's AudioSeal](https://github.com/facebookresearch/audioseal){target="_blank"}, an audio watermarking system, where we had to probe AudioSeal's robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.
+
+**Colab Notebook Link**: 
+
+* [Part 1](https://colab.research.google.com/drive/1EANT7beE-bFD1wf-PkPdoY_hwJv9Rn-C?usp=sharing){target="_blank"}
+
+* [Part 2](https://colab.research.google.com/drive/1d37qD4tOUlBQm-ljGnJ1SR_W9sySi698?usp=sharing){target="_blank"}
+
+* [Full video walk-through](https://drive.google.com/file/d/1maU-v6ogcqVm44KTq76UqZnToVrqsKzL/view?usp=sharing){target="_blank"}
+
+Alternatively, please refer to the PDF below for the static version of the assignment.
+
+### Part 1
+```{=html}
+<iframe src="audioseal-notebook-p1.pdf" width="100%" height="800" style="border:0;"></iframe>
+```
+
+[Open the Part 1 in a new tab](audioseal-notebook-p1.pdf){target="_blank"}
+
+### Part 2
+```{=html}
+<iframe src="audioseal-notebook-p2.pdf" width="100%" height="800" style="border:0;"></iframe>
+```
+
+[Open the Part 2 in a new tab](audioseal-notebook-p2.pdf){target="_blank"}
+
+
+## Discussion & Limitations
+
+All attacks were tested on a single audio clip from LibriSpeech. Two black-box attacks (random-noise querying and particle swarm optimisation) and one white-box attack (gradient-based PGD) all evaded detection, but only PGD did so while keeping good audio quality (PESQ 3.71, versus about 1.8 to 1.9 for the black-box attacks).
+
+Reversing PGD to forge the watermark worked even better: detection on unwatermarked audio rose from 1% to 100% with almost no audible change (PESQ 4.48). This was possible because AudioSeal's detector weights are publicly downloadable, which gives an attacker full white-box access, even though the authors' own paper warns the weights should be kept private.
+
+These results come from one clip and assume white-box access for PGD, so they show what is possible, not how robust AudioSeal is in general. Developing strong black-box attacks remains the realistic open problem. Note also that PESQ is only a proxy for quality: the query and PSO attacks left audible background noise, so a human listener would likely notice the tampering, which undermines them as practical attacks.
+
+

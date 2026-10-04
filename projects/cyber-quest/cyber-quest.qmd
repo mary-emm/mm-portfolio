@@ -1,5 +1,50 @@
 ---
 title: "CyberQuest: MY Edition"
+categories: [University, 2025]
 ---
 
-Game developed on GDev and can be found [here](https://m4meh.itch.io/caknak-cyberquest){target="_blank"}. Game and charts fully designed by me, while all art assets are all credited in Main Menu.
+## Background
+
+Game developed on GDev and can be found [here](https://m4meh.itch.io/caknak-cyberquest){target="_blank"}. **Game** and **charts** fully designed by me, while all art assets are all credited in Main Menu. 
+
+<div style="display:flex; justify-content:center;">
+  <iframe width="552" height="200" src="https://itch.io/embed/3478883" frameborder="0" style="max-width:100%;">
+    <a href="https://m4meh.itch.io/caknak-cyberquest">CAKNAK: Cyber Quest by m4meh</a>
+  </iframe>
+</div>
+
+This game was made back in **May 2025** and it was done as part of my final semester for my [Industry experience studio project](https://handbook.monash.edu/2025/units/FIT5120) unit.
+
+## Aim
+The target audience for this games were Malaysian teens, to educate them on cybersecurity in a fun way, hence the gamification of data story-telling. Very much inspired by [The Pudding](https://pudding.cool/){target="_blank"}.
+
+It covers three common cybersecurity traps most people fall into:
+
+* Spam
+* Fraud
+* Intrusion
+
+### Screenshot of Spam level
+
+![](/images/game_2.png){fig-align="center" width="80%" fig-alt="Spam level screenshot"}
+
+
+### Screenshot of Fraud level
+
+![](/images/game_3.png){fig-align="center" width="80%" fig-alt="Fraud level screenshot"}
+
+
+### Screenshot of Intrusion level
+
+![](/images/game_4.png){fig-align="center" width="80%" fig-alt="Intrusion level screenshot"}
+
+### Screenshot of Credit menu
+
+::: {.center-caption}
+![Click any credit to open its source. All assets and data are released under Creative Commons licences.](/images/game_1.png){fig-align="center" width="80%" fig-alt="All credit screenshot"}
+:::
+
+
+
+
+

@@ -1,1 +1,11 @@
 .navbar-logo { border-radius: 20%; }
+
+.center-caption figcaption {
+  text-align: center !important;
+}
+
+.quarto-category {
+  background: #4d010a;
+  color: #ffbd59;
+  border: 0;
+}
