@@ -1,6 +1,6 @@
 ---
 title: "CyberQuest: MY Edition"
-categories: [University, 2025]
+categories: [University, 2025, GDevelop]
 ---
 
 ## Background

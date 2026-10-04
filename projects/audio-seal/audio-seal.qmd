@@ -1,6 +1,6 @@
 ---
 title: "Exploratory attack on AudioSeal"
-categories: [University, 2024]
+categories: [University, 2024, Python]
 
 ---
 

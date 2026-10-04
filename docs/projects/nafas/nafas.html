@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CyberQuest: MY Edition – Maryam Mohamed</title>
+<title>NAFAS – Maryam Mohamed</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -120,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/nafas/nafas.html">NAFAS: Asthma app</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/nafas/nafas.html">NAFAS: Streamlit app</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -168,7 +168,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../projects/nafas/nafas.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">NAFAS: Asthma app</span></a>
+ <span class="menu-text">NAFAS: Streamlit app</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -188,12 +188,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/nafas/nafas.html">NAFAS: Asthma app</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html">Projects</a></li><li class="breadcrumb-item"><a href="../../projects/nafas/nafas.html">NAFAS: Streamlit app</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">CyberQuest: MY Edition</h1>
+<h1 class="title">NAFAS</h1>
   <div class="quarto-categories">
     <div class="quarto-category">University</div>
     <div class="quarto-category">2025</div>
+    <div class="quarto-category">Python</div>
+    <div class="quarto-category">Streamlit</div>
   </div>
   </div>
 
@@ -211,8 +213,30 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>This Streamlit app was made in <strong>March 2025</strong> as part of my final semester for the <a href="https://handbook.monash.edu/2025/units/FIT5120">Industry Experience Studio Project</a> unit. The repo is no longer maintained, and the live air quality API it relies on may have changed since, so some pages may need updating.</p>
+<p>A live demo can be found <a href="https://drive.google.com/file/d/1R_QbQq_jegXa2rwZfxTAKyIh8cVFW5TT/view?usp=sharing" target="_blank">here</a> along with the <a href="https://github.com/mary-emm/nafas/tree/main/nafas/onboarding" target="_blank">GitHub repo</a>.</p>
+<p>This was also my first attempt at web development (while only on Python), and there were a lot of things I would have done differently. But I was proud of this mostly.</p>
+</section>
+<section id="aim" class="level2">
+<h2 class="anchored" data-anchor-id="aim">Aim</h2>
+<p>The target audience was Malaysian parents of children with asthma, in line with <a href="https://globalgoals.org/goals/3-good-health-and-well-being/" target="_blank">SDG 3: Good Health and Well-Being</a>. The app has four parts:</p>
+<ul>
+<li><strong>Real-time monitor:</strong> current AQI, temperature, humidity and pollutant levels (PM2.5, PM10, O₃) for 40 stations, pulled from the WAQI API, with child-specific guidance.</li>
+<li><strong>Learn:</strong> a guide to childhood asthma, plus charts comparing yearly state-level AQI with national childhood asthma cases (IHME data, stored in SQLite).</li>
+<li><strong>Travel:</strong> pick an origin, destination and date, and get a forecast AQI and a 5-day outlook for the destination city. Models were pickled and stored <a href="https://github.com/mary-emm/nafas/tree/main/nafas/onboarding/All_States" target="_blank">here</a>.</li>
+<li><strong>Assess:</strong> combines live AQI and PM2.5 with the child’s asthma severity to give an outdoor-activity recommendation.</li>
+</ul>
+</section>
+<section id="data-and-modelling" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-modelling">Data and modelling</h2>
+<p>Historical air quality data was the hardest part. At the time, I couldn’t find a single open source of historical AQI for Malaysia, and the live APIs only returned current readings, so I aggregated daily readings from the <a href="https://github.com/ynshung/api-malaysia" target="_blank">api-malaysia</a> repository into a per-city dataset. I then fitted one <a href="https://github.com/facebook/prophet" target="_blank">Prophet</a> time-series model per city (that were available), saved each as a pickle file, and loaded them in the app to forecast AQI for the chosen date.</p>
+<p>The forecasts are a proof of concept. Because of time constraints, the models were not rigorously validated, and accuracy drops the further the chosen date is from the training data.</p>
+<p>More than anything, this project was my first exposure to how Malaysia could improve on their organization of open-source data.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

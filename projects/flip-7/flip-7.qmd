@@ -1,0 +1,128 @@
+---
+title: "Was it worth the flip?"
+categories: [Personal, 2026, R]
+---
+
+## Background
+
+Being very late to the party when it comes to card games, I have since found a fascination towards them. Specifically, a card game called `Flip 7`, where the goal of the game is to flip 7 **distinct** cards, without busting.
+
+As simple as it sounds, it's a probabilistic game. Some would say luck, which it is still, since it's kinda hard to keep track of how many cards are left. That's what makes it interesting: the odds change with every card that leaves the deck.
+
+## How the game works
+
+Everyone flips cards from a shared deck, one at a time. The deck has number cards from 0 to 12, and there are as many copies of each number as its value (one 1, two 2s, and so on). Flip a number you already hold and you bust, scoring nothing that round. Stop before that happens and you bank the total of your hand. Flip seven *different* numbers and you earn a bonus, and the first player to 200 points wins. There are also action cards, such as **Freeze**, **Flip Three** and **Second Chance**.
+
+## This project
+
+To keep things simple, I only use the number cards 0 to 12 (79 cards) and leave out the bonus cards. The question I want to answer is: **when to stop flipping?**
+
+Please find the write-up to this [here](test){target="_blank"}
+
+
+## Code
+
+
+### Create the deck
+```{r}
+#| message: false
+
+library(tidyverse)
+
+# create card deck containing 0-5 numbers (for 0 and 1 card, theres 1 each)
+
+deck <- c(0, 1, rep(2,2), rep(3,3), rep(4,4), rep(5,5),
+          rep(6,6), rep(7,7), rep(8,8), rep(9,9),
+          rep(10,10), rep(11,11), rep(12,12))
+
+deck
+
+# should be 79
+length(deck)
+```
+
+
+### Simulate the game
+
+```{r}
+play_round <- function(stop_at){
+  
+  # randomly shuffle deck
+  d <- sample(deck)
+  
+  # initializing hand and total
+  hand <- c()
+  total <- 0
+  
+  for (card in d){
+    # the total reaches the limit, then stop
+    if (total >= stop_at) return(total)
+    
+    # if pull the same card, then bust
+    if (card %in% hand) return(0)
+    hand <- c(hand, card)
+    total <- total + card
+    
+    # whoever gets 7 distinct card gets an additional 15 points
+    if (length(hand)==7) return(total +15)
+  }
+  total
+  
+
+  }
+```
+
+### Test simulation
+
+```{r}
+# test 
+replicate(10, play_round(20))
+```
+
+
+```{r}
+
+set.seed(47)
+n <- 5000
+
+results <- map_dfr(1:63, function(s) {
+  scores <- replicate(n, play_round(s))
+  tibble(stop_at = s,
+         avg_points = mean(scores),
+         se = sd(scores) / sqrt(n))
+})
+
+head(results)
+```
+
+
+```{r}
+#| message: false
+#| fig-width: 7
+#| fig-height: 4
+
+best <- results %>% slice_max(avg_points, n = 1, with_ties = FALSE)
+
+results %>%
+  ggplot(aes(stop_at, avg_points)) +
+  geom_ribbon(aes(ymin = avg_points - 2 * se, ymax = avg_points + 2 * se),
+              alpha = 0.2) +
+  geom_line() +
+  geom_point(size = 1) +
+  geom_point(data = best, colour = "red", size = 3) +
+  geom_vline(xintercept = best$stop_at, linetype = "dashed", colour = "red") +
+  geom_label(
+    data = best,
+    aes(label = paste0("Best: stop at ", stop_at, "\n", round(avg_points, 2), " pts")),
+    vjust = -0.3, colour = "red", size = 3.5
+  ) +
+  expand_limits(y = max(results$avg_points) * 1.2) +
+  labs(x = "Stop once total reaches", y = "Average points per round") +
+  theme_minimal(base_size = 11)
+```
+
+
+```{r}
+# examining which card is around the same as stopping when point exceeds 1
+results %>% filter(stop_at %in% c(1, 40:50)) %>% select(stop_at, avg_points, se)
+```

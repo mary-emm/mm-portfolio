@@ -7,7 +7,7 @@ someone who loves..
 
 Most of my professional work is proprietary. The projects in the sidebar are ones I can share, with code (where applicable).
 
-Below is a brief timeline of my education and work experience. Further details can be found in my [resume](files/resume.pdf){download="MaryamMohamed_Resume.pdf"}.
+Below is a brief timeline of my education and work experience. Further details can be found in my [resume](files/resume.pdf){download="MaryamMohamed_Resume.pdf"}. 
 
 ```{=html}
 <style>

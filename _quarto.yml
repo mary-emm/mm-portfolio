@@ -9,14 +9,13 @@ execute:
   freeze: auto
 
 website: 
-  title: "Maryam Mohamed"
+  title: "Maryam Al-Faiz"
   navbar:
-    background: "#70020f"   # any hex colour
-    foreground: "#ffffff"   # text and icon colour
+    background: "#70020f"   
 
-    logo: images/logo.png      # file path, relative to _quarto.yml
-    logo-alt: "Logo"           # for screen readers
-    logo-href: index.qmd       # where clicking it goes (optional)
+    logo: images/logo.png      
+    logo-alt: "Logo"           
+    logo-href: index.qmd       #
     right:
       - icon: github
         href: https://github.com/mary-emm/mm-portfolio
@@ -31,22 +30,17 @@ website:
     contents: 
       - href: index.qmd
         text: About
-      - section: "Projects"
+      - section: "Past Projects"
         contents:
-          - href: projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.qmd
-            text: "(Demo) Johor election - Bayes"
-
-          # - href: projects/johor-turnout/johor-turnout.qmd
-          #   text: "Johor election"
-
-          - href: projects/fuel-child-education/fuel-child-education.qmd
-            text: "Fuel child"
-
+        
+          - href: projects/flip-7/flip-7.qmd
+            text: "[Personal] Flip-7"
+        
           - href: projects/cyber-quest/cyber-quest.qmd
             text: "CyberQuest: MY Edition"
 
           - href: projects/nafas/nafas.qmd
-            text: "NAFAS: Asthma app"
+            text: "NAFAS: Streamlit app"
 
           - href: projects/audio-seal/audio-seal.qmd
             text: "AudioSeal"

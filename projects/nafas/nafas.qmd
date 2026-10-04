@@ -1,4 +1,29 @@
 ---
-title: "CyberQuest: MY Edition"
-categories: [University, 2025]
+title: "NAFAS"
+categories: [University, 2025, Python, Streamlit]
 ---
+
+## Background
+
+This Streamlit app was made in **March 2025** as part of my final semester for the [Industry Experience Studio Project](https://handbook.monash.edu/2025/units/FIT5120) unit. The repo is no longer maintained, and the live air quality API it relies on may have changed since, so some pages may need updating. 
+
+A live demo can be found [here](https://drive.google.com/file/d/1R_QbQq_jegXa2rwZfxTAKyIh8cVFW5TT/view?usp=sharing){target="_blank"} along with the [GitHub repo](https://github.com/mary-emm/nafas/tree/main/nafas/onboarding){target="_blank"}.
+
+This was also my first attempt at web development (while only on Python), and there were a lot of things I would have done differently. But I was proud of this mostly.
+
+## Aim
+
+The target audience was Malaysian parents of children with asthma, in line with [SDG 3: Good Health and Well-Being](https://globalgoals.org/goals/3-good-health-and-well-being/){target="_blank"}. The app has four parts:
+
+* **Real-time monitor:** current AQI, temperature, humidity and pollutant levels (PM2.5, PM10, O₃) for 40 stations, pulled from the WAQI API, with child-specific guidance.
+* **Learn:** a guide to childhood asthma, plus charts comparing yearly state-level AQI with national childhood asthma cases (IHME data, stored in SQLite).
+* **Travel:** pick an origin, destination and date, and get a forecast AQI and a 5-day outlook for the destination city. Models were pickled and stored [here](https://github.com/mary-emm/nafas/tree/main/nafas/onboarding/All_States){target="_blank"}.
+* **Assess:** combines live AQI and PM2.5 with the child's asthma severity to give an outdoor-activity recommendation.
+
+## Data and modelling
+
+Historical air quality data was the hardest part. At the time, I couldn't find a single open source of historical AQI for Malaysia, and the live APIs only returned current readings, so I aggregated daily readings from the [api-malaysia](https://github.com/ynshung/api-malaysia){target="_blank"} repository into a per-city dataset. I then fitted one [Prophet](https://github.com/facebook/prophet){target="_blank"} time-series model per city (that were available), saved each as a pickle file, and loaded them in the app to forecast AQI for the chosen date.
+
+The forecasts are a proof of concept. Because of time constraints, the models were not rigorously validated, and accuracy drops the further the chosen date is from the training data.
+
+More than anything, this project was my first exposure to how Malaysia could improve on their organization of open-source data.
