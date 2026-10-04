@@ -13,6 +13,8 @@ As simple as it sounds, it's a probabilistic game. Some would say luck, which it
 
 Everyone flips cards from a shared deck, one at a time. The deck has number cards from 0 to 12, and there are as many copies of each number as its value (one 1, two 2s, and so on). Flip a number you already hold and you bust, scoring nothing that round. Stop before that happens and you bank the total of your hand. Flip seven *different* numbers and you earn a bonus, and the first player to 200 points wins. There are also action cards, such as **Freeze**, **Flip Three** and **Second Chance**.
 
+![](../../images/flip7pics.jpeg){fig-align="center" width="80%" fig-alt="Flip 7 number cards from 5 down to 0 laid out on a desk, with the Flip 7 box and a laptop behind them"}
+
 ## This project
 
 To keep things simple, I only use the number cards 0 to 12 (79 cards) and leave out the bonus cards. The question I want to answer is: **when to stop flipping?**
