@@ -10,128 +10,13 @@
     ]
   },
   {
-    "objectID": "projects/cyber-quest/cyber-quest.html",
-    "href": "projects/cyber-quest/cyber-quest.html",
-    "title": "CyberQuest: MY Edition",
-    "section": "",
-    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
-    "crumbs": [
-      "Past Projects",
-      "CyberQuest: MY Edition"
-    ]
-  },
-  {
-    "objectID": "projects/cyber-quest/cyber-quest.html#background",
-    "href": "projects/cyber-quest/cyber-quest.html#background",
-    "title": "CyberQuest: MY Edition",
-    "section": "",
-    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
-    "crumbs": [
-      "Past Projects",
-      "CyberQuest: MY Edition"
-    ]
-  },
-  {
-    "objectID": "projects/cyber-quest/cyber-quest.html#aim",
-    "href": "projects/cyber-quest/cyber-quest.html#aim",
-    "title": "CyberQuest: MY Edition",
-    "section": "Aim",
-    "text": "Aim\nThe target audience for this games were Malaysian teens, to educate them on cybersecurity in a fun way, hence the gamification of data story-telling. Very much inspired by The Pudding.\nIt covers three common cybersecurity traps most people fall into:\n\nSpam\nFraud\nIntrusion\n\n\nScreenshot of Spam level\n\n\n\n\n\n\n\nScreenshot of Fraud level\n\n\n\n\n\n\n\nScreenshot of Intrusion level\n\n\n\n\n\n\n\nScreenshot of Credit menu\n\n\n\n\nClick any credit to open its source. All assets and data are released under Creative Commons licences.",
-    "crumbs": [
-      "Past Projects",
-      "CyberQuest: MY Edition"
-    ]
-  },
-  {
-    "objectID": "projects/audio-seal/audio-seal.html",
-    "href": "projects/audio-seal/audio-seal.html",
-    "title": "Exploratory attack on AudioSeal",
-    "section": "",
-    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
-    "crumbs": [
-      "Projects",
-      "AudioSeal"
-    ]
-  },
-  {
-    "objectID": "projects/audio-seal/audio-seal.html#background",
-    "href": "projects/audio-seal/audio-seal.html#background",
-    "title": "Exploratory attack on AudioSeal",
-    "section": "",
-    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
-    "crumbs": [
-      "Projects",
-      "AudioSeal"
-    ]
-  },
-  {
-    "objectID": "projects/audio-seal/audio-seal.html#discussion-limitations",
-    "href": "projects/audio-seal/audio-seal.html#discussion-limitations",
-    "title": "Exploratory attack on AudioSeal",
-    "section": "Discussion & Limitations",
-    "text": "Discussion & Limitations\nAll attacks were tested on a single audio clip from LibriSpeech. Two black-box attacks (random-noise querying and particle swarm optimisation) and one white-box attack (gradient-based PGD) all evaded detection, but only PGD did so while keeping good audio quality (PESQ 3.71, versus about 1.8 to 1.9 for the black-box attacks).\nReversing PGD to forge the watermark worked even better: detection on unwatermarked audio rose from 1% to 100% with almost no audible change (PESQ 4.48). This was possible because AudioSeal’s detector weights are publicly downloadable, which gives an attacker full white-box access, even though the authors’ own paper warns the weights should be kept private.\nThese results come from one clip and assume white-box access for PGD, so they show what is possible, not how robust AudioSeal is in general. Developing strong black-box attacks remains the realistic open problem. Note also that PESQ is only a proxy for quality: the query and PSO attacks left audible background noise, so a human listener would likely notice the tampering, which undermines them as practical attacks.",
-    "crumbs": [
-      "Projects",
-      "AudioSeal"
-    ]
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html",
-    "href": "projects/johor-turnout/johor-turnout.html",
-    "title": "Does household income affect turnout?",
-    "section": "",
-    "text": "This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn’t realize due to work and time constraints).\nAll election data comes from ElectionData.MY, the public website of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0).\nAll code used can be found in this GitHub repo. A short write up can also be here."
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#introduction",
-    "href": "projects/johor-turnout/johor-turnout.html#introduction",
-    "title": "Does household income affect turnout?",
-    "section": "",
-    "text": "This was actually a something I was thinking of while doing the recent Johor election prediction (but couldn’t realize due to work and time constraints).\nAll election data comes from ElectionData.MY, the public website of the Malaysian Election Corpus (MECo; Scientific Data, 2025). The site dedicates its data to the public domain (CC0).\nAll code used can be found in this GitHub repo. A short write up can also be here."
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#why-do-i-care-about-this-question",
-    "href": "projects/johor-turnout/johor-turnout.html#why-do-i-care-about-this-question",
-    "title": "Does household income affect turnout?",
-    "section": "Why do I care about this question?",
-    "text": "Why do I care about this question?\nWhen I joined INVOKE, I knew very little about how politics worked, and I had the impression that most people my age didn’t care about it. That was humbling. I still however, keep my distance from politics itself, but I don’t think the goal is to immerse yourself in it. It’s to understand it well enough to make decisions that are reasoned, not just emotional. I treat this exploration as factual answers to my questions that I otherwise won’t have known unless I did this."
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#load-johors-se-15-and-compute-turnout",
-    "href": "projects/johor-turnout/johor-turnout.html#load-johors-se-15-and-compute-turnout",
-    "title": "Does household income affect turnout?",
-    "section": "Load Johor’s SE-15 and compute turnout",
-    "text": "Load Johor’s SE-15 and compute turnout\n\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\n\n\n\nse_15 &lt;- read_excel(\"data/raw/jhr_se15_dun_turnout.xlsx\") %&gt;%\n  mutate(turnout = ballots_issued / voters_total)\n\n\nglimpse(se_15)\n\nRows: 56\nColumns: 9\n$ election        &lt;chr&gt; \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", …\n$ seat            &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"…\n$ voters_total    &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213…\n$ ballots_issued  &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281…\n$ ethnic_malay    &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967,…\n$ ethnic_chinese  &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 1…\n$ ethnic_indian   &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 3…\n$ votertype_early &lt;dbl&gt; 10, 1125, 0, 0, 7, 41, 65, 26, 32, 215, 15, 12, 0, 964…\n$ turnout         &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867,…\n\nsummary(se_15$turnout)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n 0.4328  0.5371  0.5729  0.5682  0.6013  0.6802"
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#load-the-income-income-inequality-data",
-    "href": "projects/johor-turnout/johor-turnout.html#load-the-income-income-inequality-data",
-    "title": "Does household income affect turnout?",
-    "section": "Load the income & income inequality data",
-    "text": "Load the income & income inequality data\nSince both files covers between 2019-2024, I’ll filter out only Johor & 2022.\n\nincome_raw &lt;- read.csv(\"data/raw/hh_income_dun.csv\")\n\nglimpse(income_raw)\n\nRows: 1,800\nColumns: 6\n$ date          &lt;chr&gt; \"2019-01-01\", \"2022-01-01\", \"2024-01-01\", \"2019-01-01\", …\n$ state         &lt;chr&gt; \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perli…\n$ parlimen      &lt;chr&gt; \"P.001 Padang Besar\", \"P.001 Padang Besar\", \"P.001 Padan…\n$ dun           &lt;chr&gt; \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"N.01 Titi Tingg…\n$ income_median &lt;dbl&gt; 4417, 4206, 4983, 4066, 4548, 6232, 4016, 4324, 4725, 46…\n$ income_mean   &lt;dbl&gt; 4662, 4673, 5404, 4696, 5347, 5818, 4681, 4823, 5269, 53…\n\nincome_raw %&gt;% distinct(date)\n\n        date\n1 2019-01-01\n2 2022-01-01\n3 2024-01-01\n\n# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022\nincome &lt;- income_raw %&gt;% filter(state == \"Johor\", substr(date,1,4) == \"2022\")\n\nglimpse(income)\n\nRows: 56\nColumns: 6\n$ date          &lt;chr&gt; \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", …\n$ state         &lt;chr&gt; \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"J…\n$ parlimen      &lt;chr&gt; \"P.140 Segamat\", \"P.140 Segamat\", \"P.141 Sekijang\", \"P.1…\n$ dun           &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N.…\n$ income_median &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 56…\n$ income_mean   &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 72…\n\n\n\nineq_raw &lt;- read.csv(\"data/raw/hh_inequality_dun.csv\")\n\nglimpse(ineq_raw)\n\nRows: 1,800\nColumns: 5\n$ date     &lt;chr&gt; \"2019-01-01\", \"2022-01-01\", \"2024-01-01\", \"2019-01-01\", \"2022…\n$ state    &lt;chr&gt; \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"Perlis\", \"…\n$ parlimen &lt;chr&gt; \"P.001 Padang Besar\", \"P.001 Padang Besar\", \"P.001 Padang Bes…\n$ dun      &lt;chr&gt; \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"N.01 Titi Tinggi\", \"…\n$ gini     &lt;dbl&gt; 0.305, 0.285, 0.286, 0.325, 0.306, 0.239, 0.292, 0.288, 0.292…\n\nineq_raw %&gt;% distinct(date)\n\n        date\n1 2019-01-01\n2 2022-01-01\n3 2024-01-01\n\n# Since we're looking at Johor SE-15 (2022), I'll filter out Johor and the income data from 2022\nineq &lt;- ineq_raw %&gt;% filter(state == \"Johor\", substr(date,1,4) == \"2022\")\n\nglimpse(ineq)\n\nRows: 56\nColumns: 5\n$ date     &lt;chr&gt; \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022-01-01\", \"2022…\n$ state    &lt;chr&gt; \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\", \"Johor\"…\n$ parlimen &lt;chr&gt; \"P.140 Segamat\", \"P.140 Segamat\", \"P.141 Sekijang\", \"P.141 Se…\n$ dun      &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N.04 Ke…\n$ gini     &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339, 0.383…"
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata",
-    "href": "projects/johor-turnout/johor-turnout.html#checking-if-the-dun-name-in-the-household-income-matches-the-one-from-electiondata",
-    "title": "Does household income affect turnout?",
-    "section": "Checking if the DUN name in the household income matches the one from ElectionData",
-    "text": "Checking if the DUN name in the household income matches the one from ElectionData\n\nsetdiff(se_15$seat, income$dun)\n\ncharacter(0)\n\nsetdiff(se_15$seat, ineq$dun)\n\ncharacter(0)\n\n\nMatches so it makes things easier."
-  },
-  {
-    "objectID": "projects/johor-turnout/johor-turnout.html#joining-the-election-data-with-the-income-inequality-data.",
-    "href": "projects/johor-turnout/johor-turnout.html#joining-the-election-data-with-the-income-inequality-data.",
-    "title": "Does household income affect turnout?",
-    "section": "Joining the election data with the income + inequality data.",
-    "text": "Joining the election data with the income + inequality data.\n\njhr &lt;- se_15 %&gt;% left_join(income, by = c(\"seat\" = \"dun\")) %&gt;% left_join(ineq, by = c(\"seat\" = \"dun\")) %&gt;% select(election,seat,voters_total, ballots_issued,ethnic_malay,ethnic_chinese,ethnic_indian,turnout, income_median,income_mean,gini)\n\nglimpse(jhr)\n\nRows: 56\nColumns: 11\n$ election       &lt;chr&gt; \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"SE-15\", \"…\n$ seat           &lt;chr&gt; \"N.01 Buloh Kasap\", \"N.02 Jementah\", \"N.03 Pemanis\", \"N…\n$ voters_total   &lt;dbl&gt; 28481, 41221, 29923, 33702, 22613, 27426, 37495, 32213,…\n$ ballots_issued &lt;dbl&gt; 16255, 22146, 17640, 18770, 12317, 14071, 22874, 19281,…\n$ ethnic_malay   &lt;dbl&gt; 15911, 16619, 18673, 18063, 10928, 7839, 26079, 19967, …\n$ ethnic_chinese &lt;dbl&gt; 8980, 20797, 10011, 13305, 8586, 13365, 9766, 10682, 10…\n$ ethnic_indian  &lt;dbl&gt; 3138, 3343, 730, 1859, 2544, 5118, 1021, 1351, 1110, 35…\n$ turnout        &lt;dbl&gt; 0.5707314, 0.5372504, 0.5895131, 0.5569402, 0.5446867, …\n$ income_median  &lt;dbl&gt; 4339, 5591, 6377, 5175, 6083, 4373, 4730, 4913, 6763, 5…\n$ income_mean    &lt;dbl&gt; 5826, 7284, 6744, 6719, 6256, 5605, 6505, 5811, 8279, 7…\n$ gini           &lt;dbl&gt; 0.356, 0.348, 0.280, 0.350, 0.283, 0.346, 0.361, 0.339,…\n\ncolSums(is.na(jhr))\n\n      election           seat   voters_total ballots_issued   ethnic_malay \n             0              0              0              0              0 \nethnic_chinese  ethnic_indian        turnout  income_median    income_mean \n             0              0              0              0              0 \n          gini \n             0 \n\n\n\nggplot(jhr, aes(x=income_median,y= turnout)) + geom_point() + geom_smooth(method= \"lm\") + labs(\n  title = \"Median income vs Turnout (Johor SE-15)\",\n    x = \"Median income\",\n    y = \"Avg. Turnout\"\n)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\nggplot(jhr, aes(x=gini,y= turnout)) + geom_point() + geom_smooth(method= \"lm\") + labs(\n  title = \"Income inequality (Gini) vs Turnout (Johor SE-15)\",\n    x = \"Income inequality\",\n    y = \"Avg. Turnout\"\n)\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\ncor(jhr$turnout,jhr$gini)\n\n[1] -0.2263208\n\ncor(jhr$turnout, jhr$income_median)\n\n[1] -0.4774117\n\n\nMedian income has clearer negative correlation,\n\nm1 &lt;- lm(turnout ~ I(income_median / 1000), data = jhr)\n\nsummary(m1)\n\n\nCall:\nlm(formula = turnout ~ I(income_median/1000), data = jhr)\n\nResiduals:\n      Min        1Q    Median        3Q       Max \n-0.095183 -0.030510 -0.003808  0.027750  0.126999 \n\nCoefficients:\n                       Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)            0.686592   0.030317  22.647  &lt; 2e-16 ***\nI(income_median/1000) -0.019170   0.004801  -3.993 0.000199 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.0469 on 54 degrees of freedom\nMultiple R-squared:  0.2279,    Adjusted R-squared:  0.2136 \nF-statistic: 15.94 on 1 and 54 DF,  p-value: 0.0001988"
-  },
-  {
     "objectID": "projects/nafas/nafas.html",
     "href": "projects/nafas/nafas.html",
     "title": "NAFAS",
     "section": "",
     "text": "This Streamlit app was made in March 2025 as part of my final semester for the Industry Experience Studio Project unit. The repo is no longer maintained, and the live air quality API it relies on may have changed since, so some pages may need updating.\nA live demo can be found here along with the GitHub repo.\nThis was also my first attempt at web development (while only on Python), and there were a lot of things I would have done differently. But I was proud of this mostly.",
     "crumbs": [
-      "Projects",
+      "Past Projects",
       "NAFAS: Streamlit app"
     ]
   },
@@ -142,7 +27,7 @@
     "section": "",
     "text": "This Streamlit app was made in March 2025 as part of my final semester for the Industry Experience Studio Project unit. The repo is no longer maintained, and the live air quality API it relies on may have changed since, so some pages may need updating.\nA live demo can be found here along with the GitHub repo.\nThis was also my first attempt at web development (while only on Python), and there were a lot of things I would have done differently. But I was proud of this mostly.",
     "crumbs": [
-      "Projects",
+      "Past Projects",
       "NAFAS: Streamlit app"
     ]
   },
@@ -153,7 +38,7 @@
     "section": "Aim",
     "text": "Aim\nThe target audience was Malaysian parents of children with asthma, in line with SDG 3: Good Health and Well-Being. The app has four parts:\n\nReal-time monitor: current AQI, temperature, humidity and pollutant levels (PM2.5, PM10, O₃) for 40 stations, pulled from the WAQI API, with child-specific guidance.\nLearn: a guide to childhood asthma, plus charts comparing yearly state-level AQI with national childhood asthma cases (IHME data, stored in SQLite).\nTravel: pick an origin, destination and date, and get a forecast AQI and a 5-day outlook for the destination city. Models were pickled and stored here.\nAssess: combines live AQI and PM2.5 with the child’s asthma severity to give an outdoor-activity recommendation.",
     "crumbs": [
-      "Projects",
+      "Past Projects",
       "NAFAS: Streamlit app"
     ]
   },
@@ -164,126 +49,9 @@
     "section": "Data and modelling",
     "text": "Data and modelling\nHistorical air quality data was the hardest part. At the time, I couldn’t find a single open source of historical AQI for Malaysia, and the live APIs only returned current readings, so I aggregated daily readings from the api-malaysia repository into a per-city dataset. I then fitted one Prophet time-series model per city (that were available), saved each as a pickle file, and loaded them in the app to forecast AQI for the chosen date.\nThe forecasts are a proof of concept. Because of time constraints, the models were not rigorously validated, and accuracy drops the further the chosen date is from the training data.\nMore than anything, this project was my first exposure to how Malaysia could improve on their organization of open-source data.",
     "crumbs": [
-      "Projects",
+      "Past Projects",
       "NAFAS: Streamlit app"
     ]
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "",
-    "text": "The 2026 Johor state election was my first attempt at Bayesian updating, adapted from Rigdon et al. (2009). That paper models a two-party contest. Our version handled several parties at once, using a Dirichlet distribution for each seat’s vote shares.\nThe model correctly called about 89% of the winning seats (X of Y). I wouldn’t credit the method alone: lucked played a huge part in everything.\nThe original analysis used my employer’s survey data, which I can’t share. This page is a demo of the core idea on one seat, Endau, using public results from electiondata.my and a synthetic survey.\n\n\n\n\n\n\nImportantThis is a deliberately simple version\n\n\n\nThe real model had several parties, poststratified by ethnicity, and handled undecided voters. This demo reduces the problem to a two-sided coin: BN (Kak Awi) vs everyone else. It shows the mechanics of Bayesian updating, not how accurate the method is."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#background",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#background",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "",
-    "text": "The 2026 Johor state election was my first attempt at Bayesian updating, adapted from Rigdon et al. (2009). That paper models a two-party contest. Our version handled several parties at once, using a Dirichlet distribution for each seat’s vote shares.\nThe model correctly called about 89% of the winning seats (X of Y). I wouldn’t credit the method alone: lucked played a huge part in everything.\nThe original analysis used my employer’s survey data, which I can’t share. This page is a demo of the core idea on one seat, Endau, using public results from electiondata.my and a synthetic survey.\n\n\n\n\n\n\nImportantThis is a deliberately simple version\n\n\n\nThe real model had several parties, poststratified by ethnicity, and handled undecided voters. This demo reduces the problem to a two-sided coin: BN (Kak Awi) vs everyone else. It shows the mechanics of Bayesian updating, not how accurate the method is."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#why-endau",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#why-endau",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Why Endau",
-    "text": "Why Endau\nKak Awi won in 2018 under UMNO and again in 2022 under BERSATU, and she won in 2026 back under UMNO. Endau is a good test of whether a prior built from history can capture a candidate’s personal vote, or only the party’s."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#limitations",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#limitations",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Limitations",
-    "text": "Limitations\nI understood the two-party version of an election model relatively well. Extending it to several parties, in a landscape where coalitions and their members keep changing, was harder, and I can’t say I fully understood every modelling choice. I used AI assistance while building this demo and can explain each step. The main uncertainties in the real model were how party labels map across elections, how much weight history should get, and how undecided respondents are treated."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#code-demo",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#code-demo",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Code Demo",
-    "text": "Code Demo\nAgain for context: Kak Awi won in 2018 (UMNO) and 2022 (BERSATU)\nBelow are the queries that I ran on electiondata.my and later saved for my usage.\n\n\n\n\n\n\nNoteQuery used (run on electiondata.my)\n\n\n\n\n\nSELECT date, election, seat, candidate_uid, name, party, coalition,\n       votes, votes_perc, result\nFROM headline_ballots\nWHERE state = 'Johor'\n  AND election IN ('SE-14', 'SE-15')\n  AND seat LIKE '%Endau%'\nORDER BY election, votes DESC\n\n\n\n\nLoad Data\n\nlibrary(dplyr)\nlibrary(readxl)\nlibrary(ggplot2)\n\n# import file\nres &lt;- read_excel(\"data/endau-past-results.xlsx\") %&gt;%\n  mutate(\n    # ensuring characters are numbers & date is in correct format\n    votes = readr::parse_number(as.character(votes)),\n    year  = if (inherits(date, \"POSIXct\") || inherits(date, \"Date\")) {\n              as.integer(format(date, \"%Y\"))\n            } else {\n              as.integer(format(as.Date(date, \"%d %b %Y\"), \"%Y\"))\n            }\n  ) %&gt;%\n  group_by(year) %&gt;%\n  mutate(share = 100 * votes / sum(votes)) %&gt;%\n  ungroup()\n\nres %&gt;% select(year, name, votes, share)\n\n# A tibble: 8 × 4\n   year name                            votes  share\n  &lt;int&gt; &lt;chr&gt;                           &lt;dbl&gt;  &lt;dbl&gt;\n1  2018 Alwiyah binti Talib (Kak Awi)    7136 48.0  \n2  2018 Norul Haszarul bin Abu Samah     4056 27.3  \n3  2018 Roslan bin Nikmat                3689 24.8  \n4  2022 Alwiyah binti Talib (Kak Awi)    8433 55.5  \n5  2022 Mohd Youzaimi bin Yusof          5392 35.5  \n6  2022 Mohammad Fakrulradzi bin Mahmud  1154  7.59 \n7  2022 Mohd Noorhisyam bin Ibrahim       145  0.954\n8  2022 Ismail bin Don                     77  0.507\n\n\n\n\nVisualization of Endau seat\n\nkak_awi &lt;- res %&gt;%\n  filter(grepl(\"Kak Awi\", name)) %&gt;%\n  transmute(year, line = \"Kak Awi (any party)\", share, label = party)\n\nbn &lt;- res %&gt;%\n  filter(coalition == \"BN\") %&gt;%\n  transmute(year, line = \"BN candidate\", share, label = party)\n\nggplot(bind_rows(kak_awi, bn), aes(year, share, colour = line)) +\n  geom_line(linewidth = 1, alpha = .8) +\n  geom_point(size = 3) +\n  geom_text(aes(label = label), vjust = -1, size = 3, show.legend = FALSE) +\n  scale_x_continuous(breaks = c(2018, 2022), expand = expansion(mult = c(0.1, 0.25))) +\n  labs(y = \"Vote share (%)\", x = NULL, colour = NULL,\n       title = \"N.32 Endau: vote share by candidate, not by party\")\n\n\n\n\n\n\n\n\n\n\nConstructing Prior\nTwo priors for 2026, using only the 2018 and 2022 results. Each party’s past share is a blend of the two elections, with the more recent one weighted higher:\n\\[\np_j = 0.7 \\, p_j^{2022} + 0.3 \\, p_j^{2018}\n\\]\nThe prior is then a Dirichlet distribution, where \\(\\tau\\) is how much we trust history:\n\\[\n\\alpha_j = 1 + \\tau \\, p_j\n\\]\n\nParty prior: each party keeps its own history.\nCandidate prior: Kak Awi’s 2022 share moves with her from PN to BN.\n\n\nparties &lt;- c(\"BN\", \"PN\", \"PH\", \"Other\")\ntau &lt;- 40\n\n# vote share by bucket and year (2018's GS = PAS's bloc, treated as PN lineage)\nshares &lt;- res %&gt;%\n  mutate(bucket = case_when(coalition %in% c(\"BN\", \"PH\", \"PN\") ~ coalition,\n                            coalition == \"GS\" ~ \"PN\",\n                            TRUE ~ \"Other\")) %&gt;%\n  group_by(year, bucket) %&gt;%\n  summarise(share = sum(share) / 100, .groups = \"drop\")\n\nget_share &lt;- function(y) {\n  s &lt;- shares[shares$year == y, ]\n  out &lt;- s$share[match(parties, s$bucket)]\n  out[is.na(out)] &lt;- 0          # party didn't contest that year\n  out\n}\np22 &lt;- get_share(2022)\np18 &lt;- get_share(2018)\n\n# party prior: each party keeps its history, 70% 2022 + 30% 2018\nparty_prior &lt;- 0.7 * p22 + 0.3 * p18\n\n# candidate prior: in 2022 only, Kak Awi's share moves from PN to BN\n# (2018 needs no swap, she was already UMNO then)\np22_swapped &lt;- p22\np22_swapped[1:2] &lt;- p22[2:1]\ncand_prior &lt;- 0.7 * p22_swapped + 0.3 * p18\n\nalpha_party &lt;- 1 + tau * party_prior\nalpha_cand  &lt;- 1 + tau * cand_prior\n\ndata.frame(parties, p18 = round(p18, 3), p22 = round(p22, 3),\n           party_prior = round(party_prior, 3), cand_prior = round(cand_prior, 3))\n\n  parties   p18   p22 party_prior cand_prior\n1      BN 0.480 0.355       0.392      0.532\n2      PN 0.248 0.555       0.463      0.323\n3      PH 0.273 0.076       0.135      0.135\n4   Other 0.000 0.015       0.010      0.010\n\n\n\n\nSynthetic Survey\nThe real survey can’t be shared, so I invented one: 40 decided respondents, drawn from preferences I chose. I set BN near 50% to match the story that Kak Awi’s support followed her to UMNO. That means the demo shows how the update works, not whether the candidate prior is right.\n\nset.seed(42)\nn &lt;- 40\ntrue_share &lt;- c(BN = .50, PN = .30, PH = .17, Other = .03)   # invented\nsurvey &lt;- as.numeric(rmultinom(1, n, true_share))\nnames(survey) &lt;- parties\nsurvey\n\n   BN    PN    PH Other \n   24     7     8     1",
-    "crumbs": [
-      "Projects",
-      "(Demo) Johor election - Bayes"
-    ]
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#formulation",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#formulation",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Formulation",
-    "text": "Formulation\nLet \\(p_j\\) be party \\(j\\)’s vote share in the past election, and \\(\\tau\\) how much we trust history. The prior is a Dirichlet distribution with parameters\n\\[\n\\alpha_j = 1 + \\tau \\, p_j\n\\]\nIf \\(n_j\\) survey respondents chose party \\(j\\), the update is just addition:\n\\[\n\\alpha'_j = \\alpha_j + n_j\n\\]\nThe posterior for the vector of vote shares \\(\\pi = (\\pi_1, \\dots, \\pi_K)\\) is\n\\[\n\\pi \\mid \\text{survey} \\;\\sim\\; \\text{Dirichlet}(\\alpha'_1, \\dots, \\alpha'_K)\n\\]\nwith mean\n\\[\n\\mathbb{E}[\\pi_j] = \\frac{\\alpha'_j}{\\sum_k \\alpha'_k}\n\\]\nWe simulate 10,000 draws from this distribution and estimate each party’s chance of winning as\n\\[\nP(\\text{party } j \\text{ wins}) = P\\left(\\pi_j = \\max_k \\pi_k\\right)\n\\]\nwhich is just the share of draws in which party \\(j\\) comes first.",
-    "crumbs": [
-      "Projects",
-      "(Demo) Johor election - Bayes"
-    ]
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#update-prior-survey-posterior",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#update-prior-survey-posterior",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Update: prior + survey = posterior",
-    "text": "Update: prior + survey = posterior\nIf \\(n_j\\) survey respondents chose party \\(j\\), the update is just addition:\n\\[\n\\alpha'_j = \\alpha_j + n_j\n\\]\n\npost_party &lt;- alpha_party + survey\npost_cand  &lt;- alpha_cand  + survey\n\n\nResult\n\nrdir &lt;- function(n, a) {\n  g &lt;- matrix(rgamma(n * length(a), a), ncol = length(a), byrow = TRUE)\n  g / rowSums(g)\n}\n\nsummarise_post &lt;- function(a) {\n  d &lt;- rdir(10000, a)\n  data.frame(party = parties,\n             mean = colMeans(d),\n             lo90 = apply(d, 2, quantile, .05),\n             hi90 = apply(d, 2, quantile, .95),\n             win_prob = tabulate(max.col(d), length(a)) / 10000)\n}\n\nresult &lt;- bind_rows(\n  summarise_post(post_party) %&gt;% mutate(prior = \"Party prior\"),\n  summarise_post(post_cand)  %&gt;% mutate(prior = \"Candidate prior\")\n)\n\nresult %&gt;% mutate(across(where(is.numeric), ~ round(.x, 3)))\n\n  party  mean  lo90  hi90 win_prob           prior\n1    BN 0.485 0.395 0.575    0.959     Party prior\n2    PN 0.316 0.235 0.402    0.041     Party prior\n3    PH 0.171 0.108 0.243    0.000     Party prior\n4 Other 0.029 0.006 0.064    0.000     Party prior\n5    BN 0.551 0.461 0.640    0.999 Candidate prior\n6    PN 0.249 0.174 0.329    0.001 Candidate prior\n7    PH 0.171 0.107 0.244    0.000 Candidate prior\n8 Other 0.029 0.006 0.064    0.000 Candidate prior\n\n\n\nplot_df &lt;- bind_rows(\n  data.frame(party = parties, share = party_prior, type = \"Prior\",  prior = \"Party prior\"),\n  data.frame(party = parties, share = cand_prior,  type = \"Prior\",  prior = \"Candidate prior\"),\n  data.frame(party = parties, share = survey / sum(survey), type = \"Survey\", prior = \"Party prior\"),\n  data.frame(party = parties, share = survey / sum(survey), type = \"Survey\", prior = \"Candidate prior\"),\n  result %&gt;% transmute(party, share = mean, type = \"Posterior\", prior)\n) %&gt;%\n  mutate(type = factor(type, c(\"Prior\", \"Survey\", \"Posterior\")),\n         party = factor(party, parties))\n\nggplot(plot_df, aes(party, share, fill = type)) +\n  geom_col(position = \"dodge\", alpha = .85) +\n  facet_wrap(~ prior) +\n  labs(y = \"Vote share\", x = NULL, fill = NULL,\n       caption = \"Survey is synthetic (invented preferences).\")\n\n\n\n\n\n\n\n\n\n\nHow much does the answer depend on my choices?\nPosterior mean for BN, under different trust in history (\\(\\tau\\)) and a survey where her vote did, or did not, follow her:\n\nbn_mean &lt;- function(prior_share, tau, counts) {\n  a &lt;- 1 + tau * prior_share + counts\n  a[1] / sum(a)\n}\n\nset.seed(42)\nsurvey_followed &lt;- as.numeric(rmultinom(1, n, c(.50, .30, .17, .03)))   # BN strong\nsurvey_stayed   &lt;- as.numeric(rmultinom(1, n, c(.35, .45, .17, .03)))   # PN kept the vote\n\nexpand.grid(tau = c(10, 40, 100), survey = c(\"Followed her\", \"Stayed with PN\")) %&gt;%\n  rowwise() %&gt;%\n  mutate(counts = list(if (survey == \"Followed her\") survey_followed else survey_stayed),\n         party_prior = bn_mean(party_prior, tau, counts),\n         cand_prior  = bn_mean(cand_prior,  tau, counts)) %&gt;%\n  ungroup() %&gt;%\n  select(-counts) %&gt;%\n  mutate(across(where(is.numeric) & !tau, ~ round(.x, 3)))\n\n# A tibble: 6 × 4\n    tau survey         party_prior cand_prior\n  &lt;dbl&gt; &lt;fct&gt;                &lt;dbl&gt;      &lt;dbl&gt;\n1    10 Followed her         0.536      0.562\n2    40 Followed her         0.484      0.551\n3   100 Followed her         0.446      0.543\n4    10 Stayed with PN       0.406      0.432\n5    40 Stayed with PN       0.401      0.468\n6   100 Stayed with PN       0.397      0.495",
-    "crumbs": [
-      "Projects",
-      "(Demo) Johor election - Bayes"
-    ]
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#the-idea",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#the-idea",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "The idea",
-    "text": "The idea\nThis is the globe-tossing example from Statistical Rethinking (ch. 2). Instead of tossing a globe and counting water, I “ask” 40 voters and count BN (Kak Awi). I’m estimating \\(p\\), BN’s share of the vote, by grid approximation:\n\nDefine a grid of possible values of \\(p\\) (0 to 1)\nDefine a prior: how plausible each \\(p\\) looks before the survey, using past results\nCompute the likelihood: how well each \\(p\\) explains “20 of 40 said BN”\nMultiply prior by likelihood\nStandardise so the result sums to 1. That is the posterior\n\nThe starting share blends the two past elections, weighting the recent one more:\n\\[\np_{\\text{history}} = 0.7\\,p^{2022} + 0.3\\,p^{2018}\n\\]"
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#data",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#data",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Data",
-    "text": "Data\nPast results come from electiondata.my. I ran this query there and saved the output.\n\n\n\n\n\n\nNoteQuery used (run on electiondata.my)\n\n\n\n\n\nSELECT date, election, seat, candidate_uid, name, party, coalition,\n       votes, votes_perc, result\nFROM headline_ballots\nWHERE state = 'Johor'\n  AND election IN ('SE-14', 'SE-15')\n  AND seat LIKE '%Endau%'\nORDER BY election, votes DESC\n\n\n\n\nlibrary(dplyr)\nlibrary(readxl)\nlibrary(ggplot2)\n\nres &lt;- read_excel(\"data/endau-past-results.xlsx\") %&gt;%\n  mutate(\n    votes = readr::parse_number(as.character(votes)),\n    year  = if (inherits(date, \"POSIXct\") || inherits(date, \"Date\")) {\n              as.integer(format(date, \"%Y\"))\n            } else {\n              as.integer(format(as.Date(date, \"%d %b %Y\"), \"%Y\"))\n            }\n  ) %&gt;%\n  group_by(year) %&gt;%\n  mutate(share = 100 * votes / sum(votes)) %&gt;%\n  ungroup()\n\nres %&gt;% select(year, name, party, votes, share)\n\n# A tibble: 8 × 5\n   year name                            party   votes  share\n  &lt;int&gt; &lt;chr&gt;                           &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1  2018 Alwiyah binti Talib (Kak Awi)   UMNO     7136 48.0  \n2  2018 Norul Haszarul bin Abu Samah    BERSATU  4056 27.3  \n3  2018 Roslan bin Nikmat               PAS      3689 24.8  \n4  2022 Alwiyah binti Talib (Kak Awi)   BERSATU  8433 55.5  \n5  2022 Mohd Youzaimi bin Yusof         UMNO     5392 35.5  \n6  2022 Mohammad Fakrulradzi bin Mahmud AMANAH   1154  7.59 \n7  2022 Mohd Noorhisyam bin Ibrahim     PEJUANG   145  0.954\n8  2022 Ismail bin Don                  BEBAS      77  0.507"
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#the-seats-history",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#the-seats-history",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "The seat’s history",
-    "text": "The seat’s history\n\nkak_awi &lt;- res %&gt;%\n  filter(grepl(\"Kak Awi\", name)) %&gt;%\n  transmute(year, line = \"Kak Awi (any party)\", share, label = party)\n\nbn &lt;- res %&gt;%\n  filter(coalition == \"BN\") %&gt;%\n  transmute(year, line = \"BN candidate\", share, label = party)\n\nggplot(bind_rows(kak_awi, bn), aes(year, share, colour = line)) +\n  geom_line(linewidth = 1, alpha = .8) +\n  geom_point(size = 3) +\n  geom_text(aes(label = label), vjust = -1, size = 3, show.legend = FALSE) +\n  scale_x_continuous(breaks = c(2018, 2022), expand = expansion(mult = c(0.1, 0.25))) +\n  labs(y = \"Vote share (%)\", x = NULL, colour = NULL,\n       title = \"N.32 Endau: vote share by candidate, not by party\")\n\n\n\n\n\n\n\n\nIn 2018 both lines are the same point, since Kak Awi was the BN candidate. In 2022 they split: she rose to 55% as BERSATU while the BN candidate fell to 35%. This shows her vote held across a party switch. It doesn’t prove the vote followed her, since 2022 was also a national swing towards PN."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#three-starting-beliefs-one-survey",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#three-starting-beliefs-one-survey",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Three starting beliefs, one survey",
-    "text": "Three starting beliefs, one survey\nI compare three priors, so the reader can see how much the answer depends on the starting belief:\n\nFlat: every \\(p\\) is equally plausible, so the survey decides.\nParty: BN keeps its own past share. My belief is centred on that, give or take prior_sd.\nCandidate: Kak Awi’s own 2022 share follows her back to UMNO. This is an assumption, and it is the claim being tested.\n\nThe survey is synthetic: 20 of 40 decided respondents say BN. I chose this.\n\n# history -&gt; starting shares\nbn18  &lt;- res %&gt;% filter(year == 2018, coalition == \"BN\") %&gt;% pull(share) / 100\nbn22  &lt;- res %&gt;% filter(year == 2022, coalition == \"BN\") %&gt;% pull(share) / 100\nawi22 &lt;- res %&gt;% filter(year == 2022, grepl(\"Kak Awi\", name)) %&gt;% pull(share) / 100\n\np_party &lt;- 0.7 * bn22  + 0.3 * bn18   # BN keeps what the party got\np_cand  &lt;- 0.7 * awi22 + 0.3 * bn18   # Kak Awi's own 2022 share follows her\n\n# synthetic survey\nn &lt;- 40; k &lt;- 20\n\n# 1. grid\np_grid &lt;- seq(0, 1, length.out = 200)\n\n# 2. priors (\"around this value, give or take prior_sd\")\nprior_sd    &lt;- 0.1\nprior_flat  &lt;- rep(1, 200)\nprior_party &lt;- dnorm(p_grid, mean = p_party, sd = prior_sd)\nprior_cand  &lt;- dnorm(p_grid, mean = p_cand,  sd = prior_sd)\n\n# 3. likelihood of 20 BN out of 40, at every p\nlikelihood &lt;- dbinom(k, size = n, prob = p_grid)\n\n# 4 + 5. posterior = prior x likelihood, standardised\nupdate &lt;- function(prior) {\n  post &lt;- likelihood * prior\n  post / sum(post)\n}\npost_flat  &lt;- update(prior_flat)\npost_party &lt;- update(prior_party)\npost_cand  &lt;- update(prior_cand)\n\nc(bn18 = bn18, bn22 = bn22, awi22 = awi22, p_party = p_party, p_cand = p_cand)\n\n     bn18      bn22     awi22   p_party    p_cand \n0.4795377 0.3547135 0.5547661 0.3921608 0.5321976"
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#what-this-shows",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#what-this-shows",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "What this shows",
-    "text": "What this shows\n\nThe same survey gives different answers depending on the starting belief. [Fill in one sentence from your table: which prior ended closest to the survey, and which moved the most.]\nHow far the belief moves depends on the prior spread (prior_sd) and the number of respondents. Try prior_sd of 0.05 or 0.2, and a different k, and re-run."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#what-this-doesnt-show",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#what-this-doesnt-show",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "What this doesn’t show",
-    "text": "What this doesn’t show\n\nThe survey is invented, so this can’t say which prior is right, or how accurate the method is.\nGrouping everyone else into one side means “over 50%” is a majority, not “wins the seat”. In a multi-party race BN can win with less.\nThe 70/30 weights, prior_sd and the candidate prior are judgement calls, not estimates."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#reproducibility",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#reproducibility",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Reproducibility",
-    "text": "Reproducibility\nPast results: electiondata.my, using the query above, saved as data/endau-past-results.xlsx. All other numbers come from the code on this page."
-  },
-  {
-    "objectID": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#result",
-    "href": "projects/demo-bayes-johor-prediction/demo-bayes-johor-prediction.html#result",
-    "title": "(Demo) Endau: Updating a seat prediction with survey data",
-    "section": "Result",
-    "text": "Result\n\nsummarise &lt;- function(post, name) {\n  s &lt;- sample(p_grid, size = 1e4, replace = TRUE, prob = post)\n  data.frame(prior      = name,\n             post_mean  = round(sum(p_grid * post), 3),\n             lo90       = round(as.numeric(quantile(s, .05)), 3),\n             hi90       = round(as.numeric(quantile(s, .95)), 3),\n             p_majority = round(sum(post[p_grid &gt; .5]), 3))\n}\nset.seed(42)\nrbind(summarise(post_flat,  \"flat\"),\n      summarise(post_party, \"party\"),\n      summarise(post_cand,  \"candidate\"))\n\n      prior post_mean  lo90  hi90 p_majority\n1      flat     0.500 0.372 0.628      0.500\n2     party     0.460 0.362 0.558      0.255\n3 candidate     0.512 0.412 0.613      0.578\n\n\np_majority is the probability that BN’s share is above 50%.\n\npar(mfrow = c(1, 3))\nfor (x in list(list(\"Flat\",      prior_flat,  post_flat),\n               list(\"Party\",     prior_party, post_party),\n               list(\"Candidate\", prior_cand,  post_cand))) {\n  pr &lt;- x[[2]] / sum(x[[2]])\n  plot(p_grid, x[[3]], type = \"l\", lwd = 2, main = x[[1]],\n       xlab = \"BN (Kak Awi) share\", ylab = \"plausibility\",\n       ylim = c(0, max(x[[3]], pr)))\n  lines(p_grid, pr, lty = 2)\n  abline(v = .5, col = \"grey60\")\n}\n\n\n\n\n\n\n\n\nSolid line = posterior, dashed line = prior, grey line = 50%.\n\nSanity check\nWith a flat prior, the grid answer should match the exact Beta answer. The difference below should be about zero.\n\nexact &lt;- dbeta(p_grid, k + 1, n - k + 1)\nmax(abs(post_flat - exact / sum(exact)))\n\n[1] 6.938894e-18"
   },
   {
     "objectID": "projects/flip-7/flip-7.html",
@@ -338,6 +106,72 @@
     "crumbs": [
       "Past Projects",
       "[Personal] Flip-7"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html",
+    "href": "projects/audio-seal/audio-seal.html",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "",
+    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
+    "crumbs": [
+      "Past Projects",
+      "AudioSeal"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html#background",
+    "href": "projects/audio-seal/audio-seal.html#background",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "",
+    "text": "This was done as part of my Malicious AI unit back in October 2024. In a team of two, we had to find ways to attack a given codebase: Meta’s AudioSeal, an audio watermarking system, where we had to probe AudioSeal’s robustness by designing attacks against its watermark detection, and documented which ones succeeded and why. The assignment paper is lost to file corruption, but the Python notebook it was based on survives and is walked through below.\nColab Notebook Link:\n\nPart 1\nPart 2\nFull video walk-through\n\nAlternatively, please refer to the PDF below for the static version of the assignment.\n\n\n\nOpen the Part 1 in a new tab\n\n\n\n\nOpen the Part 2 in a new tab",
+    "crumbs": [
+      "Past Projects",
+      "AudioSeal"
+    ]
+  },
+  {
+    "objectID": "projects/audio-seal/audio-seal.html#discussion-limitations",
+    "href": "projects/audio-seal/audio-seal.html#discussion-limitations",
+    "title": "Exploratory attack on AudioSeal",
+    "section": "Discussion & Limitations",
+    "text": "Discussion & Limitations\nAll attacks were tested on a single audio clip from LibriSpeech. Two black-box attacks (random-noise querying and particle swarm optimisation) and one white-box attack (gradient-based PGD) all evaded detection, but only PGD did so while keeping good audio quality (PESQ 3.71, versus about 1.8 to 1.9 for the black-box attacks).\nReversing PGD to forge the watermark worked even better: detection on unwatermarked audio rose from 1% to 100% with almost no audible change (PESQ 4.48). This was possible because AudioSeal’s detector weights are publicly downloadable, which gives an attacker full white-box access, even though the authors’ own paper warns the weights should be kept private.\nThese results come from one clip and assume white-box access for PGD, so they show what is possible, not how robust AudioSeal is in general. Developing strong black-box attacks remains the realistic open problem. Note also that PESQ is only a proxy for quality: the query and PSO attacks left audible background noise, so a human listener would likely notice the tampering, which undermines them as practical attacks.",
+    "crumbs": [
+      "Past Projects",
+      "AudioSeal"
+    ]
+  },
+  {
+    "objectID": "projects/cyber-quest/cyber-quest.html",
+    "href": "projects/cyber-quest/cyber-quest.html",
+    "title": "CyberQuest: MY Edition",
+    "section": "",
+    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
+    "crumbs": [
+      "Past Projects",
+      "CyberQuest: MY Edition"
+    ]
+  },
+  {
+    "objectID": "projects/cyber-quest/cyber-quest.html#background",
+    "href": "projects/cyber-quest/cyber-quest.html#background",
+    "title": "CyberQuest: MY Edition",
+    "section": "",
+    "text": "Game developed on GDev and can be found here. Game and charts fully designed by me, while all art assets are all credited in Main Menu.\n\n &lt;a href=\"https://m4meh.itch.io/caknak-cyberquest\"&gt;CAKNAK: Cyber Quest by m4meh&lt;/a&gt; \n\nThis game was made back in May 2025 and it was done as part of my final semester for my Industry experience studio project unit.",
+    "crumbs": [
+      "Past Projects",
+      "CyberQuest: MY Edition"
+    ]
+  },
+  {
+    "objectID": "projects/cyber-quest/cyber-quest.html#aim",
+    "href": "projects/cyber-quest/cyber-quest.html#aim",
+    "title": "CyberQuest: MY Edition",
+    "section": "Aim",
+    "text": "Aim\nThe target audience for this games were Malaysian teens, to educate them on cybersecurity in a fun way, hence the gamification of data story-telling. Very much inspired by The Pudding.\nIt covers three common cybersecurity traps most people fall into:\n\nSpam\nFraud\nIntrusion\n\n\nScreenshot of Spam level\n\n\n\n\n\n\n\nScreenshot of Fraud level\n\n\n\n\n\n\n\nScreenshot of Intrusion level\n\n\n\n\n\n\n\nScreenshot of Credit menu\n\n\n\n\nClick any credit to open its source. All assets and data are released under Creative Commons licences.",
+    "crumbs": [
+      "Past Projects",
+      "CyberQuest: MY Edition"
     ]
   }
 ]
