@@ -19,7 +19,7 @@ Everyone flips cards from a shared deck, one at a time. The deck has number card
 
 To keep things simple, I only use the number cards 0 to 12 (79 cards) and leave out the bonus cards. The question I want to answer is: **when to stop flipping?**
 
-Please find the write-up to this [here](test){target="_blank"}
+Please find the write-up to this [here](MaryamAlFaiz_WritingSample1.pdf){target="_blank"}.
 
 
 ## Code

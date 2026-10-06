@@ -4,6 +4,7 @@ project:
   output-dir: docs
   resources:
     - projects/audio-seal/*.pdf
+    - projects/flip-7/*.pdf
 
 execute:
   freeze: auto
