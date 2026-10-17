@@ -1,0 +1,37 @@
+/* About page timeline. Colours follow the active light/dark theme. */
+.tl { border-left: 3px solid var(--bs-secondary-color, #888); padding-left: 1rem; }
+.tl details { margin-bottom: 1.2rem; }
+
+.tl summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  color: var(--bs-body-color);
+}
+.tl summary::-webkit-details-marker { display: none; }
+.tl summary::after { content: "▾"; margin-left: auto; color: var(--bs-primary); }
+.tl details[open] summary::after { content: "▴"; }
+
+/* closed = body colour, open = primary */
+.tl details[open] summary { color: var(--bs-primary); }
+
+.tl img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 4px;
+}
+/* for the University of Newcastle logo */
+.tl img.logo-plain { background: none; padding: 0; object-fit: cover; }
+
+.tl b { display: block; }
+.tl .more { margin: 0.6rem 0 0 4rem; font-size: 0.95rem; }
+
+/* project listing cards on the Projects page */
+.quarto-grid-item .card-img-top { object-fit: cover; }
+/* no placeholder block for projects without an image */
+.listing-item-img-placeholder { display: none; }

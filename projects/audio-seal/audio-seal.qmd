@@ -1,7 +1,9 @@
 ---
 title: "Exploratory attack on AudioSeal"
 categories: [University, 2024, Python]
-
+description: "Black-box and white-box attacks on Meta's AudioSeal watermark detector."
+image: ../../images/audio_seal.png
+image-alt: "AudioSeal project screenshot"
 ---
 
 ## Background

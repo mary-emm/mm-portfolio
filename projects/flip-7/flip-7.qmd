@@ -1,6 +1,9 @@
 ---
 title: "Was it worth the flip?"
 categories: [Personal, 2026, R]
+description: "A Monte Carlo simulation of Flip 7 to find the best time to stop flipping."
+image: ../../images/flip7pics.jpeg
+image-alt: "Flip 7 number cards laid out on a desk"
 ---
 
 ## Background

@@ -1,0 +1,40 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&family=Fira+Mono&display=swap');
+
+$font-family-sans-serif: "Figtree", Helvetica, sans-serif;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: "Montserrat", Figtree, Helvetica, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+// one accent: maroon
+$maroon: #70020F;
+$primary: $maroon;
+$secondary: #B0A4A4;
+$success: $maroon; $info: $maroon; $warning: $maroon;
+
+$body-bg: #FAF8F8;
+$body-color: #231D1D;
+$navbar-bg: $body-bg;
+$navbar-fg: $body-color;
+$code-bg: #F0EBEB;
+$code-block-bg: #F0EBEB;
+$code-color: $maroon;
+$card-bg: $body-bg;
+$gray-border: #E2DADA;
+$card-border-color: $gray-border;
+$tag-bg: $maroon;
+$tag-fg: #fff;
+
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.4rem;
+
+$callout-color-note: $maroon;
+$callout-color-tip: $maroon;
+$callout-color-caution: #B86E00;
+$callout-color-warning: #B86E00;
+$callout-color-important: $maroon;
+
+/*-- scss:rules --*/
+@import "mm-rules";

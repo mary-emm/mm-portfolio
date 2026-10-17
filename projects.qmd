@@ -1,0 +1,15 @@
+---
+listing:
+  contents: projects
+  sort: "title"
+  type: grid
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  image-height: 250px
+  fields: [title, image, description, categories]
+page-layout: full
+title-block-banner: false
+---
+
+# [Projects]{.accent}

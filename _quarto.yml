@@ -11,44 +11,28 @@ execute:
 
 website: 
   title: "Maryam Al-Faiz"
+  favicon: images/logo.png
   navbar:
-    background: "#70020f"   
-
-    logo: images/logo.png      
-    logo-alt: "Logo"           
-    logo-href: index.qmd       #
+    title: "MARYAM AL-FAIZ<span class='name-bar'></span>"
     right:
+      - text: about
+        href: about.qmd
+      - text: projects
+        href: projects.qmd
+      - text: contact
+        href: contact.qmd
       - icon: github
         href: https://github.com/mary-emm/mm-portfolio
         aria-label: GitHub
         target: _blank
-      - icon: envelope
-        href: mailto:maryamalfaiz06@gmail.com
-        aria-label: Email
-    
-  sidebar:
-    style: docked
-    contents: 
-      - href: index.qmd
-        text: About
-      - section: "Past Projects"
-        contents:
-        
-          - href: projects/flip-7/flip-7.qmd
-            text: "[Personal] Flip-7"
-        
-          - href: projects/cyber-quest/cyber-quest.qmd
-            text: "CyberQuest: MY Edition"
-
-          - href: projects/nafas/nafas.qmd
-            text: "NAFAS: Streamlit app"
-
-          - href: projects/audio-seal/audio-seal.qmd
-            text: "AudioSeal"
-
 
 format:
   html:
+    theme:
+      light: [litera, assets/mm-theme-light.scss]
+      dark: [darkly, assets/mm-theme-dark.scss]
+    css: assets/mm-styles.css
     code-copy: true
-    theme: [darkly, custom.scss]
-    css: styles.css
+    code-block-border-left: true
+    smooth-scroll: true
+    link-external-newwindow: true

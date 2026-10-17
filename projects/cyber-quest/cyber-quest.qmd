@@ -1,6 +1,9 @@
 ---
 title: "CyberQuest: MY Edition"
 categories: [University, 2025, GDevelop]
+description: "A GDevelop game that teaches Malaysian teens about spam, fraud and intrusion."
+image: ../../images/game_2.png
+image-alt: "Screenshot of the Spam level"
 ---
 
 ## Background

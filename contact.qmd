@@ -1,0 +1,10 @@
+---
+pagetitle: "Contact"
+---
+
+# [Contact]{.accent}
+
+I'd love to hear from you.
+
+[<i class="bi bi-github"></i> GitHub](https://github.com/mary-emm){.btn-mm target="_blank"}
+[<i class="bi bi-envelope"></i> Email](mailto:maryamalfaiz06@gmail.com){.btn-mm}

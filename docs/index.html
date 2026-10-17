@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About – Maryam Al-Faiz</title>
+<title>Maryam Al-Faiz</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -36,16 +36,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./images/logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4ffc9315a0e0aea7fb861ee41eb61485.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-dad56c6ca80291656006b91b1d5ec8f1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-4ffc9315a0e0aea7fb861ee41eb61485.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-a3ed5c7389c89d8260af7aa74d714f31.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9ab8383e6a60ace7a70a84b6d76b96a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-97ca1bf4bb06ac5b35c1deb2603df031.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-9ab8383e6a60ace7a70a84b6d76b96a6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,24 +80,241 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
 
-<link rel="stylesheet" href="styles.css">
+    const options = {
+      valueNames: ['listing-title','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="assets/mm-styles.css">
 </head>
 
-<body class="nav-sidebar docked nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
-    <img src="./images/logo.png" alt="Logo" class="navbar-logo light-content">
-    <img src="./images/logo.png" alt="Logo" class="navbar-logo dark-content">
-    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Maryam Al-Faiz</span>
+    <span class="navbar-title">MARYAM AL-FAIZ<span class="name-bar"></span></span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -99,226 +323,127 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mary-emm/mm-portfolio" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
-</i> 
-<span class="menu-text"></span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">about</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./contact.html"> 
+<span class="menu-text">contact</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:maryamalfaiz06@gmail.com"> <i class="bi bi-envelope" role="img" aria-label="Email">
+    <a class="nav-link" href="https://github.com/mary-emm/mm-portfolio" target="_blank"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">About</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">About</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Past Projects</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects/flip-7/flip-7.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">[Personal] Flip-7</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects/cyber-quest/cyber-quest.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">CyberQuest: MY Edition</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects/nafas/nafas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">NAFAS: Streamlit app</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects/audio-seal/audio-seal.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">AudioSeal</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">I am…</h1>
+
+
+
+
+<div class="hero">
+<div class="hero-title">
+Hi, I’m <span>Maryam</span>.
+</div>
+<p class="hero-lede">
+I <em>try</em> to translate human problems into math. Data scientist with a Master of AI, working in R and Python, from Malaysia.
+</p>
+<p><a href="./about.html" class="btn-mm filled">About me</a> <a href="./projects.html" class="btn-mm">All projects</a> <a href="./contact.html" class="btn-mm">Contact</a></p>
+</div>
+<div class="section-label">
+<p>Selected projects</p>
 </div>
 
 
 
-<div class="quarto-title-meta">
 
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<p>someone who loves translating human problems into math (though I’m still learning the ropes).</p>
-<p>I have an interdisciplinary background, and a love-hate relationship with AI. I try to train my mind to understand hard things, even when I don’t understand them yet. I may not be the cream of the crop, but I am what’s left when the rest of the cream goes away. In other words, I’m tenacious.</p>
-<p>Most of my professional work is proprietary. The projects in the sidebar are ones I can share, with code (where applicable). Below is a brief timeline of my education and work experience.</p>
-<style>
-.tl { border-left: 3px solid #888; padding-left: 1rem; }
-.tl details { margin-bottom: 1.2rem; }
-
-.tl summary { display: flex; align-items: center; gap: 1rem; cursor: pointer; list-style: none; }
-.tl summary::-webkit-details-marker { display: none; }
-.tl summary::after { content: "▾"; margin-left: auto; color: #888; }
-.tl details[open] summary::after { content: "▴"; }
-
-.tl summary::after,
-.tl details[open] summary::after { color: #ffbd59 !important; }
-
-.tl img {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #fff;
-  padding: 4px;
-}
-/* for uon logo */
-.tl img.logo-plain { background: none; padding: 0; object-fit: cover; }
-
-/* closed = white, open = yellow */
-.tl summary,
-.tl summary span,
-.tl summary b { color: #fff !important; }
-
-.tl details[open] summary,
-.tl details[open] summary span,
-.tl details[open] summary b { color: #ffbd59 !important; }
-
-.tl b { display: block; }
-.tl .more { margin: 0.6rem 0 0 4rem; font-size: 0.95rem; }
-
-a { color: #ffbd59; }
-a:hover { color: #ffd48a; }
-</style>
-
-<div class="tl">
-  <div></div>
-
-  <details open="">
-    <summary>
-      <img src="images/invokeLogo.png" alt="INVOKE Solutions">
-      <span><b>Jan. 2026 - present</b>Data Scientist, INVOKE Solutions</span>
-    </summary>
-    <div class="more">
-      <ul>
-        <li>Introduced a Bayesian approach to election prediction (Dirichlet vote share simulation), reaching ~89% accuracy.</li>
-        <li>Designed and built Bersama's candidate screening API: a 40/40/20 composite score combining background, LLM-scored interview content and a librosa voice analysis service. Handed it over with documentation to the dev team.</li>
-        <li>Recruitment and interview PIC for ARCHES and the <a href="https://www.gentime-project.org/" target="_blank">GenTime</a> time-use study (University of Oxford).</li>
-        <li>Designed consumer survey instruments and cleaned and analysed survey data at the scale of millions of rows.</li>
-
-      </ul>
-    </div>
-  </details>
-
-  <details>
-    <summary>
-      <img src="images/gamudaLogo.jpg" alt="Gamuda Learning Center">
-      <span><b>Sept. 2025 - Nov. 2025</b>Full-stack AI Development Bootcamp, Gamuda Learning Center</span>
-    </summary>
-    <div class="more">Intensive full-stack AI training in React, Python, FastAPI, SQL and Google Cloud. Our capstone, <b style="display:inline">Ngam-Je</b>, an AI-powered secondhand marketplace, won second place.</div>
-  </details>
-
-  <details>
-    <summary>
-      <img src="images/mumLogo.jpg" alt="Monash University Malaysia">
-      <span><b>Jul. 2023 - Jul. 2025</b>Master of Artificial Intelligence (Coursework), Monash University Malaysia</span>
-    </summary>
-    <div class="more">CGPA:3.56 | WAM: 76.93%.</div>
-
-    <div class="more">Letter of Commendation for Malicious AI and Multi-Agent Systems. Coursework in machine learning, deep learning and statistical methods.</div>
-  </details>
-
-  <details>
-    <summary>
-      <img src="images/uonLogo.png" alt="University of Newcastle" class="logo-plain">
-      <span><b>Sept. 2021 - Oct. 2022</b>Language Support Assistant, Global Engagement Office, University of Newcastle</span>
-    </summary>
-    <div class="more">Resolved 100+ student inquiries, handled records and data validation, and trained new staff on protocols and database systems.</div>
-  </details>
-
-  <details>
-    <summary>
-      <img src="images/uonLogo.png" alt="University of Newcastle" class="logo-plain">
-      <span><b>Feb. 2019 - Nov. 2021</b>Bachelor of Design (Architecture), University of Newcastle, Australia</span>
-    </summary>
-    <div class="more">GPA: 5.5/7.0. Design studio was my weaker area, but I earned Distinctions in 8 of 10 non-studio units, which reflects stronger analytical and research skills than design instinct. My architecture training still shapes how I structure problems and present them visually.</div>
-  </details>
-
-   <details>
-    <summary>
-      <img src="images/kmbLogo.png" alt="MARA Banting College">
-      <span><b>Jun. 2016 - Jun. 2018</b>International Baccalaureate Diploma (IBDP), MARA Banting College</span>
-    </summary>
-    <div class="more">39/45 points. Malay A: Literature (HL) 7, English B (HL) 7, Economics (HL) 6, Mathematics (SL) 6, Environmental Systems and Societies (SL) 6, Visual Arts (SL) 6.</div>
-  </details>
-
-  <details>
-    <summary>
-      <img src="images/mrsmLogo.jpeg" alt="Junior MARA Science College">
-      <span><b>Feb. 2012 - May. 2016</b>IGCSE O-Levels, Junior MARA Science College</span>
-    </summary>
-    <div class="more">5A 1B. Mathematics A, Biology A, Chemistry A, Physics A, English as a Second Language A, Additional Mathematics B.</div>
-  </details>
-
+<div class="quarto-listing quarto-listing-container-grid" id="listing-listing">
+<div class="list grid quarto-listing-cols-3">
+<div class="g-col-1" data-index="0" data-categories="VW5pdmVyc2l0eSUyQzIwMjQlMkNQeXRob24=" data-listing-file-modified-sort="1792251648943" data-listing-reading-time-sort="2" data-listing-word-count-sort="300">
+<a href="./projects/audio-seal/audio-seal.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/audio_seal.png" class="thumbnail-image card-img" style="height: 200px;" alt="AudioSeal project screenshot">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Exploratory attack on AudioSeal
+</h5>
+<div class="card-text listing-description delink">
+<p>Black-box and white-box attacks on Meta’s AudioSeal watermark detector.</p>
 </div>
-
-
-
-</main> <!-- /main -->
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="1" data-categories="VW5pdmVyc2l0eSUyQzIwMjUlMkNQeXRob24lMkNTdHJlYW1saXQ=" data-listing-file-modified-sort="1792251648943" data-listing-reading-time-sort="2" data-listing-word-count-sort="325">
+<a href="./projects/nafas/nafas.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/nafas.png" class="thumbnail-image card-img" style="height: 200px;" alt="NAFAS app screenshot">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+NAFAS
+</h5>
+<div class="card-text listing-description delink">
+<p>A Streamlit app giving Malaysian parents of asthmatic children air quality guidance and AQI forecasts.</p>
+</div>
+</div>
+</div></a>
+</div>
+<div class="g-col-1" data-index="2" data-categories="UGVyc29uYWwlMkMyMDI2JTJDUg==" data-listing-file-modified-sort="1792251189392" data-listing-reading-time-sort="4" data-listing-word-count-sort="642">
+<a href="./projects/flip-7/flip-7.html" class="quarto-grid-link">
+<div class="quarto-grid-item card h-100 card-left">
+<p class="card-img-top">
+<img loading="lazy" src="./images/flip7pics.jpeg" class="thumbnail-image card-img" style="height: 200px;" alt="Flip 7 number cards laid out on a desk">
+</p>
+<div class="card-body post-contents">
+<h5 class="no-anchor card-title listing-title">
+Was it worth the flip?
+</h5>
+<div class="card-text listing-description delink">
+<p>A Monte Carlo simulation of Flip 7 to find the best time to stop flipping.</p>
+</div>
+</div>
+</div></a>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
     const icon = "";
     const anchorJS = new window.AnchorJS();
     anchorJS.options = {
@@ -404,6 +529,11 @@ a:hover { color: #ffd48a; }
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
@@ -722,4 +852,5 @@ a:hover { color: #ffd48a; }
 
 
 
+<script src="site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

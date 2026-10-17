@@ -1,0 +1,43 @@
+/*-- scss:defaults --*/
+
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&family=Fira+Mono&display=swap');
+
+$font-family-sans-serif: "Figtree", Helvetica, sans-serif;
+$font-family-monospace: "Fira Mono", monospace;
+$headings-font-family: "Montserrat", Figtree, Helvetica, sans-serif;
+$font-family-base: $font-family-sans-serif;
+
+// one accent: gold
+$gold: #FFBD59;
+$primary: $gold;
+$secondary: #8A7C7C;
+$success: $gold; $info: $gold; $warning: $gold;
+
+$body-bg: #231D1D;
+$body-color: #F4F0F0;
+$navbar-bg: $body-bg;
+$navbar-fg: $body-color;
+$code-bg: #382F2F;
+$code-block-bg: #382F2F;
+$code-color: $gold;
+$card-bg: $body-bg;
+$gray-border: #514646;
+$card-border-color: $gray-border;
+$tag-bg: #70020F;
+$tag-fg: $gold;
+
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.4rem;
+
+$callout-color-note: $gold;
+$callout-color-tip: $gold;
+$callout-color-caution: $gold;
+$callout-color-warning: $gold;
+$callout-color-important: #FF7A85;
+
+/*-- scss:rules --*/
+@import "mm-rules";
+
+pre code { background-color: $code-bg; color: $body-color !important; }
+kbd { background-color: $body-bg; }

@@ -1,6 +1,9 @@
 ---
 title: "NAFAS"
 categories: [University, 2025, Python, Streamlit]
+description: "A Streamlit app giving Malaysian parents of asthmatic children air quality guidance and AQI forecasts."
+image: ../../images/nafas.png
+image-alt: "NAFAS app screenshot"
 ---
 
 ## Background
