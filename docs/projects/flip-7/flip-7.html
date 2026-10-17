@@ -362,6 +362,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>I am very much looking forward to include more than 1 players in the simulation, because I should have considered the probability of the cards in the deck when a card is taken out. I imagine I am able to do a bayesian updating for each numbered cards in order to choose what cards is more likely to be drawn.</p>
+</section>
 <section id="background" class="level2">
 <h2 class="anchored" data-anchor-id="background">Background</h2>
 <p>Being very late to the party when it comes to card games, I have since found a fascination towards them. Specifically, a card game called <code>Flip 7</code>, where the goal of the game is to flip 7 <strong>distinct</strong> cards, without busting.</p>
@@ -444,7 +448,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># test </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">replicate</span>(<span class="dv">10</span>, <span class="fu">play_round</span>(<span class="dv">20</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 23 23 23 20 21 20 21 24  0  0</code></pre>
+<pre><code> [1]  0 22 20 28  0 26  0  0 23 21</code></pre>
 </div>
 </div>
 <div class="cell">

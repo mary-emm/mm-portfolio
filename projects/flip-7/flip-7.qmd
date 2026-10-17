@@ -6,6 +6,10 @@ image: ../../images/flip7pics.jpeg
 image-alt: "Flip 7 number cards laid out on a desk"
 ---
 
+## Disclaimer
+
+I am very much looking forward to include more than 1 players in the simulation, because I should have considered the probability of the cards in the deck when a card is taken out. I imagine I am able to do a bayesian updating for each numbered cards in order to choose what cards is more likely to be drawn.
+
 ## Background
 
 Being very late to the party when it comes to card games, I have since found a fascination towards them. Specifically, a card game called `Flip 7`, where the goal of the game is to flip 7 **distinct** cards, without busting.

@@ -16,7 +16,7 @@ listing:
 
 ::: {.hero}
 <div class="hero-title">Hi, I’m <span>Maryam</span>.</div>
-<p class="hero-lede">I <em>try</em> to translate human problems into math. Data scientist with a Master of AI, working in R and Python, from Malaysia.</p>
+<p class="hero-lede">I <em>try</em> to translate human problems into math. I like working in R and Python, but occasionally jump in the deep end of other languages and frameworks. More about me <a href="about.qmd">here</a>.</p>
 <a href="about.qmd" class="btn-mm filled">About me</a>
 <a href="projects.qmd" class="btn-mm">All projects</a>
 <a href="contact.qmd" class="btn-mm">Contact</a>

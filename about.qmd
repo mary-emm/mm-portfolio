@@ -45,7 +45,7 @@ Most of my professional work is proprietary. The [projects](projects.qmd) are on
     </summary>
     <div class="more">CGPA:3.56 | WAM: 76.93%.</div>
 
-    <div class="more">Letter of Commendation for Malicious AI and Multi-Agent Systems. Coursework in machine learning, deep learning and statistical methods.</div>
+    <div class="more">Letter of Commendation for Malicious AI and Multi-Agent Systems. Coursework in machine learning, deep learning, statistical methods and Introduction to Data Science.</div>
   </details>
 
   <details>
