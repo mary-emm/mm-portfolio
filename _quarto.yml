@@ -10,10 +10,10 @@ execute:
   freeze: auto
 
 website: 
-  title: "Maryam Al-Faiz"
+  title: "Maryam Mohamed"
   favicon: images/logo.png
   navbar:
-    title: "MARYAM AL-FAIZ<span class='name-bar'></span>"
+    title: "MARYAM MOHAMED<span class='name-bar'></span>"
     right:
       - text: about
         href: about.qmd
